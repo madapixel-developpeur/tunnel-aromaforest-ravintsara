@@ -22,34 +22,19 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-            <!-- Favicon -->
-            {# <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/bonique/assets/images/toby/favicon_256x256px.png') }}"> #}
-            <!-- Project Stylesheets 
-            ==========================================-->
-            <!-- CSS 
-            ========================= -->
-            <!--bootstrap min css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/bootstrap.min.css') }}">
-            <!--owl carousel min css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/owl.carousel.min.css') }}">
-            <!--slick min css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/slick.css') }}">
-            <!--magnific popup min css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/magnific-popup.css') }}">
-            <!--font awesome css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/font.awesome.css') }}">
-            <!--ionicons css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/ionicons.min.css') }}">
-            <!--simple line icons css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/simple-line-icons.css') }}">
-            <!--animate css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/animate.css') }}">
-            <!--jquery ui min css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/jquery-ui.min.css') }}">
-            <!--slinky menu css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/slinky.menu.css') }}">
-            <!--plugins css-->
-            <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/plugins.css') }}">
+
+            {{ encore_entry_link_tags('botanique_bootstrap_css') }}
+            {{ encore_entry_link_tags('botanique_owl_carousel_css') }}
+            {{ encore_entry_link_tags('botanique_slick_css') }}
+            {{ encore_entry_link_tags('botanique_magnific_popup_css') }}
+            {{ encore_entry_link_tags('botanique_font_awesome_css') }}
+            {{ encore_entry_link_tags('botanique_ionicons_css') }}
+            {{ encore_entry_link_tags('botanique_simple_line_icons_css') }}
+            {{ encore_entry_link_tags('botanique_animate_css') }}
+            {{ encore_entry_link_tags('botanique_jquery_ui_css') }}
+            {{ encore_entry_link_tags('botanique_slinky_menu_css') }}
+            {{ encore_entry_link_tags('botanique_plugins_css') }}
+
             <!-- Main Style CSS -->
             {{ encore_entry_link_tags('botanique_style_css') }}
             {{ encore_entry_link_tags('botanique_custom_css') }}
@@ -60,37 +45,22 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
 
-            <!-- JS
-        ============================================ -->
-            <!--jquery min js-->
-                <!--modernizr min js here-->
-            <script src="{{ asset('assets/bonique/assets/js/vendor/modernizr-3.7.1.min.js') }}"></script>
-        
-            <script src="{{ asset('assets/bonique/assets/js/vendor/jquery-3.4.1.min.js') }}"></script>
-            <!--popper min js-->
-            <script src="{{ asset('assets/bonique/assets/js/popper.js') }}"></script>
-            <!--bootstrap min js-->
-            <script src="{{ asset('assets/bonique/assets/js/bootstrap.min.js') }}"></script>
-            <!--owl carousel min js-->
-            <script src="{{ asset('assets/bonique/assets/js/owl.carousel.min.js') }}"></script>
-            <!--slick min js-->
-            <script src="{{ asset('assets/bonique/assets/js/slick.min.js') }}"></script>
-            <!--magnific popup min js-->
-            <script src="{{ asset('assets/bonique/assets/js/jquery.magnific-popup.min.js') }}"></script>
-            <!--counterup min js-->
-            <script src="{{ asset('assets/bonique/assets/js/jquery.counterup.min.js') }}"></script>
-            <!--jquery countdown min js-->
-            <script src="{{ asset('assets/bonique/assets/js/jquery.countdown.js') }}"></script>
-            <!--jquery ui min js-->
-            <script src="{{ asset('assets/bonique/assets/js/jquery.ui.js') }}"></script>
-            <!--jquery elevatezoom min js-->
-            <script src="{{ asset('assets/bonique/assets/js/jquery.elevatezoom.js') }}"></script>
-            <!--isotope packaged min js-->
-            <script src="{{ asset('assets/bonique/assets/js/isotope.pkgd.min.js') }}"></script>
-            <!--slinky menu js-->
-            <script src="{{ asset('assets/bonique/assets/js/slinky.menu.js') }}"></script>
-            <!-- Plugins JS -->
-            <script src="{{ asset('assets/bonique/assets/js/plugins.js') }}"></script>
+
+            {{ encore_entry_script_tags('botanique_modernizr_js') }}
+            {{ encore_entry_script_tags('botanique_jquery_js') }}
+            {{ encore_entry_script_tags('botanique_popper_js') }}
+            {{ encore_entry_script_tags('botanique_bootstrap_js') }}
+            {{ encore_entry_script_tags('botanique_carousel_js') }}
+            {{ encore_entry_script_tags('botanique_slick_js') }}
+            {{ encore_entry_script_tags('botanique_jquery_manific_popup_js') }}
+            {{ encore_entry_script_tags('botanique_jquery_counterup_js') }}
+            {{ encore_entry_script_tags('botanique_jquery_countdown_js') }}
+            {{ encore_entry_script_tags('botanique_jqurery_ui_js') }}
+            {{ encore_entry_script_tags('botanique_jquery_elevatezoom_js') }}
+            {{ encore_entry_script_tags('botanique_isotope_pkgd_js') }}
+            {{ encore_entry_script_tags('botanique_slinky_menu_js') }}
+            {{ encore_entry_script_tags('botanique_plugins_js') }}
+
 
             <!-- Main JS -->
             {{ encore_entry_script_tags('botanique_main_js') }}
