@@ -71,7 +71,7 @@
   letter-spacing: 10px;
   color:#BF746B;
   font-weight: 900;
-  /* background-image:url('/assets/botanique/assets/images/title-1.png'); */
+  /* background-image:url('/assets/bonique/assets/images/title-1.png'); */
 }
 .letter-spacing-medium{
   letter-spacing: 3px !important;
@@ -89,25 +89,25 @@
 
 }
 .section_title.style_1{
-  background-image:url('/assets/botanique/assets/images/title-1.png');
+  background-image:url('/assets/bonique/assets/images/title-1.png');
 }
 .section_title.style_2{
-  background-image:url('/assets/botanique/assets/images/title-2.png');
+  background-image:url('/assets/bonique/assets/images/title-2.png');
 }
 .section_title.style_3{
-  background-image:url('/assets/botanique/assets/images/title-3.png');
+  background-image:url('/assets/bonique/assets/images/title-3.png');
 }
 .section_title.style_4{
-  background-image:url('/assets/botanique/assets/images/title-4.png');
+  background-image:url('/assets/bonique/assets/images/title-4.png');
 }
 .section_title.style_5{
-  background-image:url('/assets/botanique/assets/images/title-5.png');
+  background-image:url('/assets/bonique/assets/images/title-5.png');
 }
 .section_title.style_6{
-  background-image:url('/assets/botanique/assets/images/title-6.png');
+  background-image:url('/assets/bonique/assets/images/title-6.png');
 }
 .section_title.style_7{
-  background-image:url('/assets/botanique/assets/images/title-7.png');
+  background-image:url('/assets/bonique/assets/images/title-7.png');
 }
 
 /* List */
@@ -130,7 +130,7 @@
   content: "";
   display: inline-block;
   margin-right : 10px;
-  background-image : url("/assets/botanique/assets/icons/pin.png");
+  background-image : url("/assets/bonique/assets/icons/pin.png");
   background-size: contain;
   background-repeat: no-repeat;
   width :15px;
@@ -149,21 +149,21 @@
   line-height : 32px !important;
 }
 .my-list.my-list-style-1 .my-list-item::before{
-  background-image : url("/assets/botanique/assets/images/mod_2/icon_fleche_mod_2.png");
+  background-image : url("/assets/bonique/assets/images/mod_2/icon_fleche_mod_2.png");
   width :20px;
   height : 20px;
 }
 
 /* My Liste style 2*/
 .my-list.my-list-style-2 .my-list-item::before{
-  background-image : url("/assets/botanique/assets/images/mod_3/icon_cochage_mod_3.png");
+  background-image : url("/assets/bonique/assets/images/mod_3/icon_cochage_mod_3.png");
   width :20px;
   height : 20px;
 }
 
 /* My Liste style 3*/
 .my-list.my-list-style-3 .my-list-item::before{
-  background-image : url("/assets/botanique/assets/images/mod_3/icon_fleche_mod_3.png");
+  background-image : url("/assets/bonique/assets/images/mod_3/icon_fleche_mod_3.png");
   width :20px;
   height : 20px;
 }
@@ -267,7 +267,7 @@
   height : 20px;
   /* border-radius: 5px;
   background-color: #A4BFB1; */
-  background-image:url('/assets/botanique/assets/icons/mod_1_flêche.png');
+  background-image:url('/assets/bonique/assets/icons/mod_1_flêche.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -297,19 +297,19 @@
 }
 
 .bg-tobe-card-basic, .bg-tobe-card-gold{
-	background-image: url("/assets/botanique/assets/images/cat_price/SVG/Gold.svg");
+	background-image: url("/assets/bonique/assets/images/cat_price/SVG/Gold.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .bg-tobe-card-premium{
-	background-image: url("/assets/botanique/assets/images/cat_price/SVG/Premium.svg");
+	background-image: url("/assets/bonique/assets/images/cat_price/SVG/Premium.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .bg-green{
-	background-image: url("/assets/botanique/assets/images/cat_price/SVG/bg-green.svg");
+	background-image: url("/assets/bonique/assets/images/cat_price/SVG/bg-green.svg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }

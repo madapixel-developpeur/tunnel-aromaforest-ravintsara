@@ -3077,7 +3077,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 /* .bonique_messages_area {
-  background: url(/assets/botanique/assets/img/bg/banner7.jpg);
+  background: url(/assets/bonique/assets/img/bg/banner7.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -5199,15 +5199,15 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   background: inherit;
 }
 .shop_toolbar_btn > button.btn-grid-3 {
-  background: url(/assets/botanique/assets/img/icon/bkg_grid.png) no-repeat scroll center center;
+  background: url(/assets/bonique/assets/img/icon/bkg_grid.png) no-repeat scroll center center;
   width: 20px;
   height: 20px;
 }
 .shop_toolbar_btn > button.btn-grid-3.active {
-  background: url(/assets/botanique/assets/img/icon/bkg_grid_hover.png) no-repeat scroll center center !important;
+  background: url(/assets/bonique/assets/img/icon/bkg_grid_hover.png) no-repeat scroll center center !important;
 }
 .shop_toolbar_btn > button.btn-grid-4 {
-  background: url(/assets/botanique/assets/img/icon/bkg_grid4.png) no-repeat scroll center center;
+  background: url(/assets/bonique/assets/img/icon/bkg_grid4.png) no-repeat scroll center center;
   width: 26px;
   height: 22px;
 }
@@ -5222,15 +5222,15 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .shop_toolbar_btn > button.btn-grid-4.active {
-  background: url(/assets/botanique/assets/img/icon/bkg_grid4_hover.png) no-repeat scroll center center !important;
+  background: url(/assets/bonique/assets/img/icon/bkg_grid4_hover.png) no-repeat scroll center center !important;
 }
 .shop_toolbar_btn > button.btn-list {
-  background: url(/assets/botanique/assets/img/icon/bkg_list.png) no-repeat scroll center center;
+  background: url(/assets/bonique/assets/img/icon/bkg_list.png) no-repeat scroll center center;
   width: 20px;
   height: 20px;
 }
 .shop_toolbar_btn > button.btn-list.active {
-  background: url(/assets/botanique/assets/img/icon/bkg_list_hover.png) no-repeat scroll center center !important;
+  background: url(/assets/bonique/assets/img/icon/bkg_list_hover.png) no-repeat scroll center center !important;
 }
 
 .product_content.list_content {
