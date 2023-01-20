@@ -9,11 +9,47 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet"  type="text/css" href="{{ asset('assets/bonique/assets/css/pages/home.css') }}">
 {% endblock %}
 
 {% block body %}
-
+<section class="slider_section slider_s_three">
+    <div class="slider_area owl-carousel">
+        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider5.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="slider_content slider_c_three">
+                            <h2>Cosmetics Accessories</h2>
+                            <h1>Everything You Need</h1>
+                            <p>
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laboruLorem ipsum dolor sit amet datat non proident
+                            </p>
+                            <a href="shop.html">+ Shop Now </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider6.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="slider_content slider_c_three">
+                            <h2>2020 Trending</h2>
+                            <h1>Cosmetic Make-up</h1>
+                            <p>
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                mollit anim id est laboruLorem ipsum dolor sit amet datat non proident
+                            </p>
+                            <a href="shop.html">+ Shop Now </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 
