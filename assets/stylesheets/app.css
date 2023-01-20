@@ -1,0 +1,54 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+#loading_aroma {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 999;
+}
+#loading_aroma.hide{
+  display : none;
+}
+#loading_aroma img{
+  width : 150px;
+}
+
+
+.footer-aromaforest{
+  padding: 30px;
+  background-color: #577364;
+  color: #fff;
+}
+
+.footer-aromaforest .footer-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-aromaforest .footer-logo {
+  width: 200px;
+}
+.footer-aromaforest .footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.footer-aromaforest .footer-action-item:not(:first-child) {
+  border-left: 1px solid #fff;
+}
+.footer-aromaforest .footer-action-item {
+  text-align: center;
+  padding: 0px 10px;
+  position: relative;
+  opacity: 0.7;
+}

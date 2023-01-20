@@ -1,0 +1,391 @@
+:root{
+  --color-marron : #735A57;
+  --color-green : #577364;
+}
+.float-right{
+  float : right;
+}
+.btn.btn-cta{
+  padding : 1em 4em;
+  background-color: var(--color-marron);
+  color : white;
+  box-shadow: 0px 10px 10px #777;
+  border-radius: 50px;
+}
+.btn.btn-cta--sm{
+  padding : 0.5em 2em;
+}
+.btn.btn-cta:hover{
+  color : white;
+}
+/* Font weight */
+.font-weight-heavy{
+  font-weight : 800 !important;
+}
+.font-weight-bold{
+  font-weight : 600 !important;
+}
+
+/* Text color */
+.text-white{
+  color : white !important;
+}
+.text-green{
+  color : var(--color-green) !important;
+}
+
+
+/* Font size */
+.text-normal{
+  font-size: 16px !important ;
+  line-height: 20px !important ;
+
+}
+.text-medium{
+  font-size: 22px !important ;
+  line-height: 32px !important ;
+
+}
+.text-large{
+  font-size: 32px !important ;
+  line-height: 36px !important ;
+
+}
+.text-double-large{
+  font-size: 72px !important;
+  line-height: 76px !important;
+}
+
+/* Titles */
+.no-background{
+  background-color: transparent !important;
+}
+.section_title{
+  width : 100%;
+  padding : 50px 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: #fff;  */
+  font-size : 2rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color:#BF746B;
+  font-weight: 900;
+  /* background-image:url('/assets/botanique/assets/images/title-1.png'); */
+}
+.letter-spacing-medium{
+  letter-spacing: 3px !important;
+}
+.text-transform-none{
+  text-transform: none !important;
+}
+.section_title.section_title--subtitle {
+  padding : 20px !important;
+  font-size : 1.25rem !important;
+  letter-spacing: 3px;
+}
+.section_title h2{
+  font-weight: 900;
+
+}
+.section_title.style_1{
+  background-image:url('/assets/botanique/assets/images/title-1.png');
+}
+.section_title.style_2{
+  background-image:url('/assets/botanique/assets/images/title-2.png');
+}
+.section_title.style_3{
+  background-image:url('/assets/botanique/assets/images/title-3.png');
+}
+.section_title.style_4{
+  background-image:url('/assets/botanique/assets/images/title-4.png');
+}
+.section_title.style_5{
+  background-image:url('/assets/botanique/assets/images/title-5.png');
+}
+.section_title.style_6{
+  background-image:url('/assets/botanique/assets/images/title-6.png');
+}
+.section_title.style_7{
+  background-image:url('/assets/botanique/assets/images/title-7.png');
+}
+
+/* List */
+.my-list{
+  list-style-type: none;
+  padding : 1.5em 2em;
+  background-color: rgba(255, 255, 255, 0.3);
+  color : #fff;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+
+.my-list .my-list-item{
+  line-height: 15px;
+  position : relative;
+}
+.my-list .my-list-item::before {
+  content: "";
+  display: inline-block;
+  margin-right : 10px;
+  background-image : url("/assets/botanique/assets/icons/pin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width :15px;
+  height : 15px;
+}
+
+/* My Liste style 1*/
+.my-list.my-list-style-1, .my-list.my-list-style-2, .my-list.my-list-style-3{
+  font-weight: 500;
+  color : #000;
+  padding : 0px;
+  background-color: transparent;
+}
+
+.my-list.my-list-style-1 .my-list-item, .my-list.my-list-style-2 .my-list-item, .my-list.my-list-style-3 .my-list-item{
+  line-height : 32px !important;
+}
+.my-list.my-list-style-1 .my-list-item::before{
+  background-image : url("/assets/botanique/assets/images/mod_2/icon_fleche_mod_2.png");
+  width :20px;
+  height : 20px;
+}
+
+/* My Liste style 2*/
+.my-list.my-list-style-2 .my-list-item::before{
+  background-image : url("/assets/botanique/assets/images/mod_3/icon_cochage_mod_3.png");
+  width :20px;
+  height : 20px;
+}
+
+/* My Liste style 3*/
+.my-list.my-list-style-3 .my-list-item::before{
+  background-image : url("/assets/botanique/assets/images/mod_3/icon_fleche_mod_3.png");
+  width :20px;
+  height : 20px;
+}
+
+.banniere-img{
+  position : absolute;
+  right: 4%;
+  width: 64% !important;
+  z-index: 10;
+}
+
+.owl-carousel .owl-stage{
+  display: flex !important;
+  align-items: center !important;
+  border-top : 1px #eee solid;
+  border-bottom : 1px #eee solid;
+
+}
+
+.bg-light{
+  background-color: #EEE !important;
+}
+
+.section_title-card{
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 0px 10px 10px #777;
+  font-size : 1rem;
+  letter-spacing: 2px;
+  text-transform: none;
+  color:#000;
+  font-weight: normal;
+  max-width : 800px;
+  margin : 0 auto;
+  position : relative;
+  top : -100px;
+  z-index : 10;
+}
+.section_title-card p{
+  text-transform: none;
+}
+
+
+.title-box{
+  padding : 2em 2em ;
+  background-color: var(--color-green);
+  color : #fff;
+  width : 300px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+.title-box .title-box-illustration{
+  position :absolute;
+  z-index: 10;
+  height : 50px;
+  top : -48px;
+  left : 10px;
+}
+.title-box .title-box-label{
+  position : absolute;
+  width : 200px;
+  background-color: #fff;
+  color :var(--color-green);
+  border-radius: 20px;
+  padding : 0.15em 0.5em;
+  top : -20px;
+  left : calc(50% - 100px);
+
+}
+.title-box .title-box-label.title-box-label--light{
+  background-color: #DDD;
+}
+.title-box .title-box-text{
+  font-weight: 500;
+  font-size : 1.25em;
+
+}
+
+.section-steps{
+  width : 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding : 50px 10px;
+  /* gap : 70px; */
+  flex-wrap : wrap;
+}
+.section-step{
+  width : 150px;
+  position : relative;
+  margin : 10px 35px;
+}
+.section-step:not(:first-child)::before{
+  content :"";
+  position : absolute;
+  top : 50%;
+  left : -60px;
+  width : 30px;
+  height : 20px;
+  /* border-radius: 5px;
+  background-color: #A4BFB1; */
+  background-image:url('/assets/botanique/assets/icons/mod_1_flêche.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.section-steps--without-before .section-step::before{
+  display : none;
+}
+.section-step .section-step-img-container{
+  text-align: center;
+  min-height : 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-step .section-step-img{
+  width : 100px;
+}
+.section-step .section-step-title{
+  text-align: center;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+.section-step .section-step-description{
+  text-align: center;
+  font-weight: 500;
+}
+
+.bg-tobe-card-basic, .bg-tobe-card-gold{
+	background-image: url("/assets/botanique/assets/images/cat_price/SVG/Gold.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.bg-tobe-card-premium{
+	background-image: url("/assets/botanique/assets/images/cat_price/SVG/Premium.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.bg-green{
+	background-image: url("/assets/botanique/assets/images/cat_price/SVG/bg-green.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+/** tobe card **/
+.tobe-card {
+  width : 350px;
+  margin : 10px 20px;
+  height: 505px;
+  border-radius: 20px;
+}
+.tobe-card hr {
+	height: 2px !important;
+	width:71% !important;
+	background: var(--color-green);
+}
+
+.tobe-card>p{
+	height: 80px !important;
+	font-size: 14px !important;
+}
+.tobe-card>.tobe-card-price>.tobe-card-price-value {
+	font-size : 70px;
+}
+.tobe-card>.tobe-card-price>.tobe-card-price-unity {
+	font-weight : 500;
+  font-style: italic;
+}
+.tobe-card>.tobe-card-categorie{
+	font-weight: 600 !important;
+}
+.slider_content{
+  /* max-width : 700px !important; */
+  text-align: center;
+}
+.slider_content p{
+  max-width : unset !important;
+  word-spacing: 20px;
+}
+
+@media (max-width:1200px){
+  .section_title-card{
+    top : -40px;
+  }
+
+
+}
+/* Mobile */
+@media (max-width:767px){
+  .section_title-card{
+    top : -75px;
+  }
+}
+@media (max-width:479px){
+  .section-steps .section-step::before{
+    display : none;
+  }
+  /* Font size */
+  .text-double-large{
+    font-size: 40px !important;
+    line-height: 42px !important;
+  }
+  .text-medium{
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+
+  .section_title{
+    width : 100%;
+    padding : 20px;
+    font-size : 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .section_title.section_title--subtitle {
+    padding : 20px !important;
+    font-size : 1rem !important;
+    letter-spacing: 3px;
+  }
+}
