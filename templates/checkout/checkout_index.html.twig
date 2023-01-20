@@ -1,0 +1,367 @@
+{% extends 'base_user.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="header_top" style="border:none !important;">
+        <div class="container">
+            <div class="row align-items-center header-logo-container">
+                <a href="/" class="d-flex justify-content-center align-items-center">
+                    <img class="header-logo" src="{{ asset('assets/images/af_logo_d2.png') }}" alt="Logo Aroma forest" width="150">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                            <li>Commande</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs area end-->
+
+    <!--Checkout page section-->
+    <div class="Checkout_section">
+        <div class="container">
+            <div class="checkout_form">
+
+                <form  method="post" id="checkout_form" data-server-url="{{server_url}}" data-order-type-id="{{order_type_id}}" data-product-id="{{product.id}}" data-product-name="{{product.name}}" data-product-unit-price="{{product.cost}}">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+
+                                <h3>Vos informations</h3>
+                                <div class="row">
+
+                                    <div class="col-lg-6 mb-20">
+                                        <label>Nom <span>*</span></label>
+                                        <input type="text" name="lastname" id="lastname" required/>
+                                    </div>
+                                    <div class="col-lg-6 mb-20">
+                                        <label>Prénom <span>*</span></label>
+                                        <input type="text" name="firstname" id="firstname" required/>
+                                    </div>
+                                    <div class="col-lg-6 mb-20">
+                                        <label>Téléphone<span>*</span></label>
+                                        <input type="text" name="phone" required/>
+
+                                    </div>
+                                    <div class="col-lg-6 mb-20">
+                                        <label> Adresse e-mail<span>*</span></label>
+                                        <input type="text" name="mail" id="mail" required/>
+
+                                    </div>
+                                    <div class="col-lg-6 mb-20">
+                                        <label>Adresse de livraison</label>
+                                        <input type="text" name="delivery_address" required/>
+                                    </div>
+                                    <div class="col-lg-6 mb-20">
+                                        <label>Adresse de facturation</label>
+                                        <input type="text" name="billing_address" required/>
+                                    </div>
+                                    <div class="col-lg-6 mb-20">
+                                        <label>Code postal</label>
+                                        <input type="text" name="postal_code" required/>
+                                    </div>
+                                    <div class="col-6 mb-20">
+                                        <label for="country">Ville</label>
+                                        <input type="text" name="city" required/>
+                                    </div>
+                                    <div class="col-12 mb-20">
+                                        <label for="country">Quantité</label>
+                                        <input onchange="refreshProductQuantity()" type="number" name="quantity" id="productQuantity" value="1" required/>
+                                    </div>
+                                    {# {% if payment_type_id == 2 %}
+                                    <div class="col-12 mb-20">
+                                        <label for="country">Souscription</label>
+                                        <select class="select_option" name="interval_unit" value="month">
+                                            <option value="week">Par semaine</option>
+                                            <option value="month">Par mois</option>
+                                            <option value="year">Par an</option>
+
+                                        </select>
+                                    </div>
+                                    {% endif %} #}
+
+
+                                    <div class="col-12 mb-20">
+                                        <label for="card-element">Carte de crédit</label>
+                                        <div id="card-element" class="form-control">
+
+                                        </div>
+                                        <input type="hidden" name="stripe_token" id="stripe_token" />
+                                        <div id="card-errors" class="invalid-feedback d-block"></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="order-notes">
+                                            <label for="order_note">Notes</label>
+                                            <textarea id="order_note" name="order_note"
+                                                placeholder="Notes à propos de votre commande, ex: des notes spéciales pour la livraison." style="height : 200px;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                                <h3>Votre commande</h3>
+                                {% if error != null %}
+                                        <div class="alert alert-danger p-3 text-center" role="alert">
+                                            <div class="alert-body">
+                                                {{error}}
+                                            </div>
+                                        </div>
+                                {% else %}
+                                    <div>
+                                        <img src="{{ product_image }}" style="width:300px; height:auto" alt="">
+                                    </div>
+                                    <div class="order_table table-responsive">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Produit</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> {{product.name}} <strong> × <span class="productQuantity">1</span></strong> <span class="preorder_block">{% if product.preOrder %} (1 Précommande) {% endif %}</span></td>
+                                                    <td class="totalCost"> {{product.cost|number_format(2,',')}}€</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Sous total</th>
+                                                    <td class="totalCost">{{product.cost|number_format(2,',')}}€</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Frais de livraison</th>
+                                                    <td><strong>0.00 €</strong></td>
+                                                </tr>
+                                                <tr class="order_total">
+                                                    <th>Total</th>
+                                                    <td><strong class="totalCost">{{product.cost|number_format(2,',')}}€</strong></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="payment_method">
+                                        <div class="order_button">
+                                            <button type="submit" class="d-flex justify-content-center align-items-center"  id="checkout-btn">
+                                                Commander (<span class="totalCost">{{ product.cost|number_format(2,',')}} €</span>)
+                                                <div id="checkout-spinner" class="d-none spinner-border float-right spinner-border-sm ms-2" role="status">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                 {% endif %}
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!--Checkout page section end-->
+    <!--shopping cart area end -->
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript">
+        var qteStockProduct = {{product.produitQteStock.qteStock}};
+        var produitEstPrecommande = {% if product.precommande %}true{% else %}false{% endif %};
+        function formatPrix(prix){
+            let text = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(prix);
+            return text;
+        }
+        function refreshProductQuantity(){
+            var form = document.getElementById('checkout_form');
+            var totalCostDOM = document.getElementsByClassName("totalCost");
+            var productQuantityDOM = document.getElementsByClassName("productQuantity");
+            let productQuantityInputDOM = document.getElementById("productQuantity");
+
+            let unitPrice = parseFloat(form.dataset.productUnitPrice);
+            let quantity = parseFloat(productQuantityInputDOM.value);
+            if(isNaN(quantity)) return;
+            let qtePreCommande = quantity - qteStockProduct;
+            if(!produitEstPrecommande && qtePreCommande > 0){
+                alert("Stock insuffisant"); 
+                return;
+            }
+
+            for(let i=0; i<totalCostDOM.length; i++){
+                totalCostDOM[i].innerHTML = `${formatPrix(quantity * unitPrice)}`;
+            }
+            for(let i=0; i<productQuantityDOM.length; i++){
+                productQuantityDOM[i].innerHTML = `${quantity}`;
+            }
+            
+            if(qtePreCommande > 0){
+                $('.preorder_block').html(`( ${qtePreCommande} Précommandes)`);
+            }
+        }
+
+        $(document).ready(function () {
+            var onCheckout = false;
+            var checkoutSpinner = document.getElementById("checkout-spinner");
+            var checkoutBtn = document.getElementById("checkout-btn");
+
+            var form = document.getElementById('checkout_form');
+            var errors = document.getElementById('card-errors');
+            var cardElement = document.getElementById('card-element');
+
+
+
+            var stripe = Stripe('{{ stripe_public_key }}');
+            var elements = stripe.elements();
+            var card = elements.create('card');
+
+            var paymentTypeId = "{{payment_type_id}}";
+
+            card.mount('#card-element');
+            card.addEventListener('change', function(event) {
+                if (event.error) {
+                errors.textContent = event.error.message;
+                cardElement.classList.add('is-invalid');
+                } else {
+                errors.textContent = '';
+                cardElement.classList.remove('is-invalid');
+                }
+            });
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                if(paymentTypeId == 1) {
+                    // One time purchase
+                    stripe.createToken(card).then(oneTimePurchaseProceed);
+                }
+                else if(paymentTypeId == 2){
+                    // Subscription
+                    stripe.createPaymentMethod({
+                            type: 'card',
+                            card: card,
+                        }).then(subscriptionProceed);
+                }
+            });
+
+            function subscriptionProceed(result){
+                if (result.error) {
+                    errors.textContent = result.error.message;
+                    form.classList.add('has-error');
+                } else {
+                    let paymentMethodId = result.paymentMethod.id;
+                    document.getElementById('stripe_token').setAttribute('value', paymentMethodId);
+                    console.log(paymentMethodId);
+
+                    checkoutProceed();
+                }
+            }
+            function oneTimePurchaseProceed(result){
+                if (result.error) {
+                    errors.textContent = result.error.message;
+                    form.classList.add('has-error');
+                } else {
+                    document.getElementById('stripe_token').setAttribute('value', result.token.id);
+                    checkoutProceed();
+                }
+            }
+
+            function checkoutProceed(){
+                if(onCheckout) return;
+                onCheckout = true;
+                let form = document.getElementById('checkout_form');
+                let productQuantityInputDOM = document.getElementById("productQuantity");
+                let quantity = parseFloat(productQuantityInputDOM.value);
+                let productId = parseInt(form.dataset.productId);
+                let productName = parseInt(form.dataset.productName);
+
+                let orderTypeId = parseInt(form.dataset.orderTypeId);
+
+                let serverUrl = form.dataset.serverUrl;
+                let formData = new FormData(form);
+                let data = {
+                    "product_id" : "{{product.id}}",
+                    "quantity" : quantity,
+                    "order_type_id" : "{{order_type_id}}",
+                    "payment_type_id" : "{{payment_type_id}}",
+                    //"iteration" : 1,
+                    "product_name" : "{{product.name}}"
+                };
+                formData.forEach((value, key) => data[key] = value);
+
+                console.table(data);
+                $.ajax({
+                    url: serverUrl+"/api/checkout/proceed",
+                    method: "POST",
+                    data : JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: "json",
+                    beforeSend : function(){
+                        checkoutSpinner.classList.remove('d-none');
+                        checkoutBtn.disabled = true;
+
+                    },
+                    success: function (res) {
+                        if(res['META'].status == 200){
+                            const data1 = {
+                                mailClient : document.getElementById('mail').value,
+                                nomClient : document.getElementById('lastname').value,
+                                prenomClient : document.getElementById('firstname').value,
+                                nomProduit: data.product_name
+                            }
+                            form.reset();
+                            $.ajax({
+                                url: '/checkout/sending_mail',
+                                method: 'POST',
+                                data : data1,
+                                dataType: "json",
+                                success: function(res) {
+                                    console.log(res)
+                                }
+
+                            })
+                            alert("Votre commande a été effectuée avec succès.");
+                        }
+                        else{
+                            alert(res['META'].message);
+                        }
+                        checkoutSpinner.classList.add('d-none');
+                        checkoutBtn.disabled = false;
+                        onCheckout = false;
+                    },
+                    error: function (err){
+                        alert("Le paiement a échoué, veuillez recommencer s'il vous plaît. Si le problème persiste veuillez nous contacter.");
+                        console.error(err);
+                        checkoutSpinner.classList.add('d-none');
+                        checkoutBtn.disabled = false;
+                        onCheckout = false;
+                    }
+                })
+            }
+
+            //pageLoaded();
+        });
+
+        
+    </script>
+{% endblock %}
+

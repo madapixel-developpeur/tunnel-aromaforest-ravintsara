@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p>
+        <div><i>Message de {{contact.firstname}} {{contact.lastname}} ({{contact.email}}) pour Toby Wallet</i></div>
+        <h4>Informations du client :</h4>
+        <ul class="informations">
+            <li class="information-item">Nom : <strong>{{contact.lastname}}</strong></li>
+            <li class="information-item">Prénom : <strong>{{contact.firstname}}</strong></li>
+            <li class="information-item">Entreprise : <strong>{{contact.company}}</strong></li>
+            <li class="information-item">Fonction : <strong>{{contact.fonction}}</strong></li>
+            <li class="information-item">E-mail : <strong>{{contact.email}}</strong></li>
+            <li class="information-item">Téléphone : <strong>{{contact.phone}}</strong></li>
+        </ul>
+        <h4>Contenu du message :</h4>
+        <div>{{contact.message}}</div>
+    </p>
+    
+</body>
+</html>
