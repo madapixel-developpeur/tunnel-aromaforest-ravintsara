@@ -18,13 +18,19 @@ body{
     font-style: normal;
     font-weight: 400;
     visibility: visible;
-    font-family: $worksans;
     color: $fonts_color;
+    background-color: $color_white_2_aroma !important;
 }
+
+body, p, ul, li {
+    font-family: $Montserrat-Medium;
+    color: #5e5e5e;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     margin-top: 0;
-    font-family: $worksans;
+    color: #808080;
 }
 h1 {
     font-size: 48px;

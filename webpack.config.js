@@ -63,6 +63,7 @@ Encore
     
     // Custom css 
     .addStyleEntry('main_css', './assets/styles/main.css')
+    .addStyleEntry('page_home_css', './assets/styles/pages/page_home.css')
 
     
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

@@ -1,0 +1,200 @@
+:root{
+    --color-white-aroma: #FFFFFF;
+    --color-white-2-aroma: #EEEEEE;
+    --color-green-aroma: #577364;
+    --color-pink-aroma: #BF746B;
+}
+
+.font-green{
+    color : var(--color-green-aroma);
+}
+.font-pink{
+    color : var(--color-pink-aroma);
+}
+ul li::before{
+    content: "\2022";
+    color: var(--color-pink-aroma);;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+    font-size: 23px;
+}
+ul li{
+    margin-left: 50px;
+}
+ul li{
+    list-style: none;
+}
+.p-title-bold-700 {
+    font-weight: 700;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.under-banner .block-col-under-banner{
+    padding: 3% 16% !important;
+}
+
+.amount-fw-bold{
+    font-weight: 700;
+    color: var(--color-pink-aroma);
+    font-size: 30px;
+}
+
+section{
+    margin: 50px 0;
+}
+
+.section-home-2{
+    padding: 0 15%;
+}
+
+.section-home-3 {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.section-home-3 .block-col-section-3{
+    padding: 3% 9% ;
+}
+
+
+
+/* Container holding the image and the text */
+.lemur-home {
+    position: relative;
+    text-align: center;
+}
+  
+
+/* Top left text */
+.text-inner-img-lemur-home {
+    position: absolute;
+    top: 51px;
+    left: 125px;
+    right: 150px;
+    text-align: left;
+}
+
+.text-inner-img-lemur-home p{
+    color: white !important;
+}
+.text-inner-img-lemur-home #title-amount {
+    letter-spacing: 0.2rem;
+    line-height: 1.2;
+    font-size: 30px;
+    margin-bottom: 58px;
+}
+
+.text-inner-img-lemur-home #amount {
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 58px;
+}
+.text-inner-img-lemur-home a.btn-I-order{
+    padding: 0 13%;
+ }
+
+
+@media (min-width: 1300px) {
+    .text-inner-img-lemur-home #title-amount {
+        font-size: 71px;
+        margin-bottom: 80px;
+    }
+    .text-inner-img-lemur-home #amount {
+        font-size: 139px;
+        margin-bottom: 80px;
+    }
+}
+@media (min-width: 1000px) {
+    .text-inner-img-lemur-home {
+        top: 83px;
+    }
+    .text-inner-img-lemur-home #title-amount {
+        font-size: 40px;
+        margin-bottom: 63px;
+    }
+    .text-inner-img-lemur-home #amount {
+        font-size: 80px;
+        margin-bottom: 63px;
+    }
+}
+
+@media (max-width: 800px) {
+    .text-inner-img-lemur-home #title-amount {
+        margin-bottom: 32px;
+    }
+    .text-inner-img-lemur-home #amount {
+        margin-bottom: 32px;
+        font-size: 40px;
+    }
+
+}
+@media (max-width: 750px) {
+    .text-inner-img-lemur-home {
+        top: 36px;
+        left: 64px;
+        right: 64px;
+    }
+
+    .text-inner-img-lemur-home #title-amount {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 580px) {
+    .text-inner-img-lemur-home .button{
+        font-size: .875rem;
+    }
+    .text-inner-img-lemur-home {
+        top: 17px;
+        left: 30px;
+        right: 30px;
+    }
+
+    .text-inner-img-lemur-home #title-amount {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .text-inner-img-lemur-home #amount {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .text-inner-img-lemur-home a.btn-I-order{
+        padding: 0 6%;
+    }
+}
+
+
+.container .section-home-5, .section-home-6{
+    padding: 0 5%;
+    margin: 5% 0;
+}
+.section-home-5  .text-description-left{
+    padding-right: 5%;
+}
+@media (max-width : 860px) {
+    .section-home-5  .text-description-left{
+        padding-bottom: 10%;
+    }
+}
+.section-home-5 h3{
+    font-size: 23px;
+}
+.section-home-5 p{
+    line-height: 1.4em;
+}
+
+.section-home-6 p.aromaforest-under-who-are{
+    font-size: x-large;
+}
+
+@media (max-width : 860px) {
+    section{
+        margin-bottom: 10% !important;
+    }
+}
+
+

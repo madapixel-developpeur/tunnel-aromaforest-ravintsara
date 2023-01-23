@@ -3,27 +3,35 @@
     <head>
         <!-- Document Meta 
         =====================================-->
-            <meta charset="UTF-8">
-            <meta http-equiv="content-type" content="text/html; charset=utf-8">
-            <meta name="author" content="Pixelsior">
-            {# <meta name="description" content="Proposez à vos clients le Toby Wallet, la solution dématérialisée pour mieux les fidéliser"> #}
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-            <meta http-equiv="x-ua-compatible" content="ie=edge">
-            {% block metas %}{% endblock %}
+        <meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Pixelsior">
+        {# <meta name="description" content="Proposez à vos clients le Toby Wallet, la solution dématérialisée pour mieux les fidéliser"> #}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        {% block metas %}{% endblock %}
 
-            <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
-
-            <!-- Document Title 
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
+        <!-- Document Title 
         ======================================-->
-            <title>{% block title %}Aromaforest : Ravintsara{% endblock %}</title>
+        <title>{% block title %}Aromaforest : Ravintsara{% endblock %}</title>
 
             
-
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
 
             {{ encore_entry_link_tags('bonique_bootstrap_css') }}
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/bootstrap.min.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/owl.carousel.min.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/slick.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/magnific-popup.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/font.awesome.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/ionicons.min.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/simple-line-icons.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/animate.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/jquery-ui.min.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/slinky.menu.css') }}">
+            <link rel="stylesheet"  type="text/css" href="{{ asset('testtest/plugins.css') }}">
             {{ encore_entry_link_tags('bonique_owl_carousel_css') }}
             {{ encore_entry_link_tags('bonique_slick_css') }}
             {{ encore_entry_link_tags('bonique_magnific_popup_css') }}
