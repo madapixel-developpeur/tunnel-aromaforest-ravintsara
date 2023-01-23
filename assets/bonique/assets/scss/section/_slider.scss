@@ -222,9 +222,9 @@
 
 
 .slider_c_three{
-    padding-top: 130px;
+    padding-top: 26px !important;
     @media #{$desktop-device}{
-      padding-top: 145px;
+      padding-top: 29px !important;
     }
     @media #{$tablet-device}{
         padding-top: 0;

@@ -13,39 +13,17 @@
 {% endblock %}
 
 {% block body %}
-<h1 class="hidden">Le Ravintsara de Vohimana</h1>
-
-<section class="slider_section slider_s_three">
+<section class="slider_section slider_s_three section-home-banner">
     <div class="slider_area owl-carousel">
-        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider5.jpg">
+        <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('assets/images/home/banner-home.png') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="slider_content slider_c_three">
-                            <h2>Cosmetics Accessories</h2>
-                            <h1>Everything You Need</h1>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laboruLorem ipsum dolor sit amet datat non proident
-                            </p>
-                            <a href="shop.html">+ Shop Now </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider6.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="slider_content slider_c_three">
-                            <h2>2020 Trending</h2>
-                            <h1>Cosmetic Make-up</h1>
-                            <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laboruLorem ipsum dolor sit amet datat non proident
-                            </p>
-                            <a href="shop.html">+ Shop Now </a>
+                            <h1 class="text-white text-uppercase">Decouvrez le ravintsara de vohimana</h1>
+                            <p class="text-white">L'incontournable des Huiles Essentielles Antivirales</p>
+                            <a href="#" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
+                            
                         </div>
                     </div>
                 </div>
@@ -131,12 +109,12 @@
                 </div>
             </div>
             <div class="col-12 col-md-7">
-                <div class="block-col-section-3">
+                <div class="block-col-section-3 sec-3-grande-ligne">
                     <div class="row my-4">
                         <div class="col-2">
                             <img src="{{ asset('assets/images/icone/424@4x.png') }}" alt="icon">
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 ps-5">
                             <h3 class="text-uppercase font-pink p-title-bold-700">Propriétés</h3>
                             <p>Antiviral puissant, stimulant cardiorespiratoire, antibactérien, fluidifiant les sécrétions encombrant les voie respiratoires</p>
                         </div>
@@ -145,7 +123,7 @@
                         <div class="col-2">
                             <img src="{{ asset('assets/images/icone/45@4x.png') }}" alt="icon">
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 ps-5">
                             <h3 class="text-uppercase font-pink p-title-bold-700">Utilisations</h3>
                             <p>Refroidissement, grippes, prévention d'infection (printemps, autome, hiver), mais aussi trouble du sommeil, nervosité, stress, angoisses, fatigues chroniques ou ponctuelles, baisse de forme, déprimes.</p>
                         </div>
@@ -154,7 +132,7 @@
                         <div class="col-2">
                             <img src="{{ asset('assets/images/icone/Fir 1@4x.png') }}" alt="icon">
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 ps-5">
                             <h3 class="text-uppercase font-pink p-title-bold-700">Recommandation d'usages</h3>
                             <p> <span class="font-green fw-bold">Pour la sphère respiratoire et équilibrer les nerfs :</span> déposer quelques goutes d'huile essentielle sur l'intérieur des poignets et respirez profondément et à répétition dès que le besoin s'en fait sentir.</p>
                             <p> <span class="font-green fw-bold">Pour facilité le sommeil et améliorer son équilibre immunitaire :</span> appliquer un mélange de 20% d'huile essentielle dans une huile végétale en friction ou massage tout le long de la colonne vértébrale, ou au niveau des reins et de la nuque.</p>
@@ -229,84 +207,69 @@
             </div>
         </div>
     </section>
-
-    <section class="section-home-6">
-
-
-
-
-
-        <div class="testimonial_area mb-95">
-            <div class="container">
+    <section class="section-home-7">
+        <div class="brand_area">
+            <div class="container position-relative">
                 <div class="row">
                     <div class="col-12">
-                        <div class="section_title testi_title">
-                            <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            <h2>Client testimonials</h2>
+                        <div class="section_title style_5">
+                            <p class="font-green p-title-bold-700 title-as-h2">La presse en parle</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial_container">
-                    <div class="row">
-                        <div class="testimonial_carousel testimonial_column3 owl-carousel">
-                            <div class="col-lg-4">
-                                <div class="single_testimonial">
-                                    <div class="testimonial_thumb">
-                                        <img src="assets/img/about/testimonial1.png" alt="">
-                                    </div>
-                                    <div class="testimonial_content">
-                                        <h3>orando BLoom</h3>
-                                        <a href="https://hasthemes.com/">/demo@hasthemes.com</a>
-                                        <p>Perfect Themes and the best of all that you have many options to choose! Best
-                                            Support team ever!Very fast responding and experts on their fields! Thank you
-                                            very much!</p>
-                                    </div>
-                                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="brand_container owl-carousel ">
+                            <div class="single_brand">
+                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/France_Ô_logo.png') }}" alt=""></a>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="single_testimonial">
-                                    <div class="testimonial_thumb">
-                                        <img src="assets/img/about/testimonial2.png" alt="">
-                                    </div>
-                                    <div class="testimonial_content">
-                                        <h3>orando BLoom</h3>
-                                        <a href="https://hasthemes.com/">/demo@posthemes.com</a>
-                                        <p>Perfect Themes and the best of all that you have many options to choose! Best
-                                            Support team ever!Very fast responding and experts on their fields! Thank you
-                                            very much!</p>
-                                    </div>
-                                </div>
+                            <div class="single_brand">
+                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/Layer 3.png') }}" alt=""></a>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="single_testimonial">
-                                    <div class="testimonial_thumb">
-                                        <img src="assets/img/about/testimonial3.png" alt="">
-                                    </div>
-                                    <div class="testimonial_content">
-                                        <h3>orando BLoom</h3>
-                                        <a href="https://hasthemes.com/">/demo@hasthemes.com</a>
-                                        <p>Perfect Themes and the best of all that you have many options to choose! Best
-                                            Support team ever!Very fast responding and experts on their fields! Thank you
-                                            very much!</p>
-                                    </div>
-                                </div>
+                            <div class="single_brand">
+                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/Logo_France_5.svg.png') }}" alt=""></a>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="single_testimonial">
-                                    <div class="testimonial_thumb">
-                                        <img src="assets/img/about/testimonial1.png" alt="">
-                                    </div>
-                                    <div class="testimonial_content">
-                                        <h3>orando BLoom</h3>
-                                        <a href="https://hasthemes.com/">/demo@hasthemes.com</a>
-                                        <p>Perfect Themes and the best of all that you have many options to choose! Best
-                                            Support team ever!Very fast responding and experts on their fields! Thank you
-                                            very much!</p>
-                                    </div>
-                                </div>
+                            <div class="single_brand">
+                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/National_Geographic_logo.png') }}" alt=""></a>
+                            </div>
+                            <div class="single_brand">
+                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/TF1_logo_2013.svg.png') }}" alt=""></a>
                             </div>
                         </div>
                     </div>
+                </div>
+                <img class="img-style" style="position:absolute; height : 150px; bottom : -150px; right : 50%;" src="{{ asset('assets/images/mod_5/Vector Smart Object2.png') }}" alt="">
+            </div>
+        </div>
+        
+        <div class="row text-center">
+            <div class="row">
+                <div class="col-1">
+                    <i class="fa-solid fa-chevron-left fa-3x font-pink"></i>
+                </div>
+                <div class="col-10">
+                    <p>Je crois à l'utilité du travail d'Olivier. Il offre à ces paysans des nouveaux moyens de substance et çà c'est vital.</p>
+                    <p class="text-black fw-bold">Yann ARTHUS BERTRAND</p>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-chevron-right fa-3x font-pink"></i>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="section-home-8">
+        <div class="row">
+            <div class="col-12 col-md-5">
+                <div class="testimonial-photo text-center">
+                    <img src="{{ asset('assets/images/home/testimonials/temoin-13.png') }}" alt="img-testimonial1" class="mb-5" width="250">
+                </div>
+            </div>
+            <div class="col-12 col-md-7 testimonial-text-block">
+                <div class="testimonial-text">
+                    <p class="title-as-h2 text-uppercase font-green p-title-bold-700">Témoignages clients</p>
+                    <p class="text-black">Avec l'huile essentielle de Ravintsara, j'ai passé l'hiver avec zéro grippe ou Covid.</p>
+                    <p class="fw-bolder font-black">- Sophie 21 ans</p>
                 </div>
             </div>
         </div>
