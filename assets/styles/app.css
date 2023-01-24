@@ -1,3 +1,10 @@
+:root{
+  --color-white-aroma: #FFFFFF;
+  --color-white-2-aroma: #EEEEEE;
+  --color-green-aroma: #577364;
+  --color-pink-aroma: #BF746B;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -22,6 +29,13 @@ html {
   width : 150px;
 }
 
+.as-h2{
+  font-weight: 700;
+  display: inline-block;
+  font-size: 30px;
+  line-height: 30px;
+  color: var(--color-green-aroma);
+}
 
 .footer-aromaforest{
   padding: 30px;
