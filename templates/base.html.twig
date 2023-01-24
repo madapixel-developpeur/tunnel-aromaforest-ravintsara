@@ -59,6 +59,8 @@
             {{ encore_entry_script_tags('bonique_slinky_menu_js') }}
             {{ encore_entry_script_tags('bonique_plugins_js') }}
 
+            <!-- To fix "jQuery is not defined" in plugin.js  -->
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
             <script src="{{ asset('assets/bonique/assets/js/plugins.js') }}"></script>
 
             <!-- Main JS -->
