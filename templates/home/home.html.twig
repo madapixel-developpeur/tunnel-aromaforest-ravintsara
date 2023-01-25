@@ -15,14 +15,14 @@
 {% block body %}
 <section class="slider_section slider_s_three section-home-banner">
     <div class="slider_area owl-carousel">
-        <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('assets/images/home/banner-home.png') }}">
+        <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('assets/images/home/banner-home-2.png') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="slider_content slider_c_three">
                             <h1 class="text-white text-uppercase">Decouvrez le ravintsara de vohimana</h1>
                             <p class="text-white">L'incontournable des Huiles Essentielles Antivirales</p>
-                            <a href="#" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
+                            <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
                             
                         </div>
                     </div>
@@ -44,14 +44,14 @@
                         avec des paysans producteurs que nous soutenons en périphérie des réserves naturelles. Pour chaque flacon acheté nous plantons
                         un arbre avec eux. Vous pourrez géolocaliser votre arbre depuis votre espace client et même voir qui s'en&nbsp;occupe.
                     </p>
-                    <a href="#" class="button bg-color_pink_aroma mt-2 text-center" style="padding: 0 19%;">Je Participe</a>
+                    <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma mt-2 text-center" style="padding: 0 19%;">Je Participe</a>
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="block-col-under-banner">
                     <img src="{{ asset('assets/images/WFEN-logo-final.jpg') }}"  width="400" height="213" alt="img-wildlife">
                     <p class="py-4 mb-0">Un modèle unique, certifié qui soutien la conservation des lémurien.</p>
-                    <a href="#" class="btn btn-outline-pink-aroma color_pink_aroma">En savoir plus</a>
+                    <a href="{{ path('app_checkout_index') }}" class="btn btn-outline-pink-aroma color_pink_aroma">En savoir plus</a>
                     <p class="font-green mt-4">PARRAINEZ UN ARBRE ET RECEVEZ VOTRE FLACON POUR</p>
                     <p class="amount-fw-bold">9.99 €</p>
                 </div>
@@ -86,7 +86,7 @@
             </p>
             <div class="row d-flex justify-content-center my-3">
                 <div class="w-45">
-                    <a href="#" class="button bg-color_pink_aroma my-4" style="padding: 0 13%;" >Je Participe</a>
+                    <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma my-4" style="padding: 0 13%;" >Je Participe</a>
                 </div>
             </div>
             <p>
@@ -108,7 +108,7 @@
                         <li>Un analyse de contrôle qualité montrant la composition détaillée de chaque lot.</li>
                         <li>Une traçabilité unique jusqu'à l'arbre (vous pouvez aller voir sur place).</li>
                     </ul>
-                    <a href="#" class="button bg-color_pink_aroma mt-4 text-center" style="width: 75%;"> Je Commande</a>
+                    <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma mt-4 text-center" style="width: 75%;"> Je Commande</a>
                 </div>
             </div>
             <div class="col-12 col-md-7">
@@ -157,7 +157,7 @@
     <div class="text-inner-img-lemur-home ">
         <p id="title-amount"> RECEVEZ VOTRE FLACON ET PARRAINER UN ARBRE POUR </p>
         <p id="amount">9,80 €</p>
-        <a href="#" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
+        <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
     </div>
 </section>
 <div class="container">
@@ -194,7 +194,7 @@
         </div>
         <div class="row d-flex justify-content-center text-center">
             <div class="w-45">
-                <a href="#" class="button bg-color_pink_aroma mb-3" style="padding: 0 13%;" >Je Commande</a>
+                <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma mb-3" style="padding: 0 13%;" >Je Commande</a>
             </div>
         </div>
     </section>
@@ -256,7 +256,7 @@
                     <i class="fa-solid fa-chevron-left fa-3x font-pink"></i>
                 </div>
                 <div class="col-10">
-                    <p>Je crois à l'utilité du travail d'Olivier. Il offre à ces paysans des nouveaux moyens de substance et çà c'est vital.</p>
+                    <p> Je crois à l'utilité du travail d'Olivier. Il offre à ces paysans des nouveaux moyens de substance et çà c'est vital.</p>
                     <p class="text-black fw-bold">Yann ARTHUS BERTRAND</p>
                 </div>
                 <div class="col-1">
@@ -266,25 +266,23 @@
         </div>
 
     </section>
-    <section class="section-home-8">
-        <div class="row">
-            <div class="col-12 col-md-5">
-                <div class="testimonial-photo text-center">
-                    <img src="{{ asset('assets/images/home/testimonials/temoin-13.png') }}" alt="img-testimonial1" class="mb-5" width="250" height="274">
-                </div>
-            </div>
-            <div class="col-12 col-md-7 testimonial-text-block">
-                <div class="testimonial-text">
-                    <p class="title-as-h2 text-uppercase as-h2">Témoignages clients</p>
-                    <p class="text-black">Avec l'huile essentielle de Ravintsara, j'ai passé l'hiver avec zéro grippe ou Covid.</p>
-                    <p class="fw-bolder font-black">- Sophie 21 ans</p>
-                </div>
+</div>
+<section class="section-home-8">
+    <div class="row">
+        <div class="col-12 col-md-5">
+            <div class="testimonial-photo text-center">
+                <img src="{{ asset('assets/images/home/testimonials/temoin-13.png') }}" alt="img-testimonial1" class="mb-5" width="250" height="274">
             </div>
         </div>
-    </section>
-
-</div>
-
+        <div class="col-12 col-md-7 testimonial-text-block">
+            <div class="testimonial-text">
+                <p class="title-as-h2 text-uppercase as-h2">Témoignages clients</p>
+                <p class="text-black">Avec l'huile essentielle de Ravintsara, j'ai passé l'hiver avec zéro grippe ou Covid.</p>
+                <p class="fw-bolder font-black">- Sophie 21 ans</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block javascripts %}

@@ -252,9 +252,13 @@ section{
     line-height: 30px;
     letter-spacing: 0.1rem;
 }
+.section-home-7 .row{
+    --bs-gutter-x: 0rem;
+}
 
 .section-home-8{
     margin: 1px 0;
+    background-color: #EEEEEE;
 }
 .section-home-8 .testimonial-text{
     padding: 22% 0;

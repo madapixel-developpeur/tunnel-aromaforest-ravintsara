@@ -342,8 +342,8 @@
 }
 .slider_content{
   /* max-width : 700px !important; */
-  /* text-align: center; */
-  padding: 23px 125px;
+  text-align: center;
+  /* padding: 23px 125px; */
 
 }
 .slider_content p{
@@ -390,4 +390,8 @@
     font-size : 1rem !important;
     letter-spacing: 3px;
   }
+}
+
+.Checkout_section{
+  padding: 0% 2%;
 }
