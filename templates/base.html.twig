@@ -50,26 +50,25 @@
             <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
             <script src="{{ asset('assets/bonique/assets/js/plugins.js') }}"></script>
 
-            <!-- Main JS -->
-            {{ encore_entry_script_tags('bonique_main_js') }}
-            {{ encore_entry_script_tags('loader_js') }}
 
-            
             {# --------- N'utilisons que des scripts utiles pour la page --------- #}
             {# {{ encore_entry_script_tags('bonique_modernizr_js') }} #}
             {# {{ encore_entry_script_tags('bonique_jquery_js') }} #}
             {# {{ encore_entry_script_tags('bonique_popper_js') }} #}
             {# {{ encore_entry_script_tags('bonique_bootstrap_js') }} #}
             {# {{ encore_entry_script_tags('bonique_slick_js') }} #}
-            {# {{ encore_entry_script_tags('bonique_jquery_manific_popup_js') }} #}
+            {{ encore_entry_script_tags('bonique_jquery_manific_popup_js') }}
             {# {{ encore_entry_script_tags('bonique_jquery_counterup_js') }} #}
             {# {{ encore_entry_script_tags('bonique_jquery_countdown_js') }} #}
-            {# {{ encore_entry_script_tags('bonique_jqurery_ui_js') }} #}
-            {# {{ encore_entry_script_tags('bonique_jquery_elevatezoom_js') }} #}
+            {{ encore_entry_script_tags('bonique_jqurery_ui_js') }}
+            {{ encore_entry_script_tags('bonique_jquery_elevatezoom_js') }}
             {# {{ encore_entry_script_tags('bonique_isotope_pkgd_js') }} #}
             {# {{ encore_entry_script_tags('bonique_slinky_menu_js') }} #}
-            {# {{ encore_entry_script_tags('bonique_plugins_js') }} #}
+            {{ encore_entry_script_tags('bonique_plugins_js') }}
 
+            <!-- Main JS -->
+            {{ encore_entry_script_tags('bonique_main_js') }}
+            {{ encore_entry_script_tags('loader_js') }}
         {% endblock %}
     </head>
     <body>
