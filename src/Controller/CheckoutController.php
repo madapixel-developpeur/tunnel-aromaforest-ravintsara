@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Service\MailService;
+use App\Service\ProductService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,11 +13,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class CheckoutController extends AbstractController
 {
 
-    private $client;
+    private $productService;
 
-    public function __construct(HttpClientInterface $client)
+    public function __construct(ProductService $productService)
     {
-        $this->client = $client;
+        $this->productService = $productService;
     }
 
     #[Route('/', name: 'app_checkout_index')]
@@ -27,28 +28,19 @@ class CheckoutController extends AbstractController
         $product_id = $this->getParameter('product_id');
         $order_type_id = $this->getParameter('order_type_id');
         $payment_type_id = $this->getParameter('payment_type_id');
+        $fraisLivraison = 0;
 
 
         $product = null;
         $product_image = null;
+        $utils = null;
         try{
             if($product_id == null) throw new \Exception("Le numéro du produit pour ce tunnel n'a pas encore été défini. Dans le fichier .env, ajouter PRODUCT_ID=XXX");
             if($order_type_id == null) throw new \Exception("Le type de commande pour ce tunnel n'a pas encore été défini. Dans le fichier .env, ajouter ORDER_TYPE_ID=XXX");
-
-            $response = $this->client->request(
-                'GET',
-                $server_url.'/api/products/'.$product_id
-            );
-            $res = json_decode($response->getContent(), true);
-
-            if($res['META']['status']==200){
-                $product = $res['DATA'];
-                if($product == null)  throw new \Exception("Le produit n°".$product_id." n'a pas été trouvé.");
-            }
-            else{
-                throw new \Exception($res['META']['message']);
-            }
-
+            $product = $this->productService->getProduct();
+            $utils = $this->productService->getUtils();
+            if($product['cost'] > 0 && $product['cost'] < $utils['prixMinFraisLivraisonGratuit']) 
+                $fraisLivraison = $utils['fraisLivraison'];
         }
         catch(\Exception $err){
             $error = $err->getMessage();
@@ -65,6 +57,8 @@ class CheckoutController extends AbstractController
             'server_url' => $server_url,
             'order_type_id' => $order_type_id,
             'payment_type_id' => $payment_type_id,
+            'utils' => $utils,
+            'fraisLivraison' => $fraisLivraison
         ]);
 
     }

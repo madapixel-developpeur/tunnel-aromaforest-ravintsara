@@ -148,11 +148,22 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Frais de livraison</th>
-                                                    <td><strong>0.00 €</strong></td>
+                                                    <td id="frais-livraison" data-frais="{{utils.fraisLivraison}}" data-prix-min-gratuit="{{utils.prixMinFraisLivraisonGratuit}}">{{fraisLivraison|number_format(2,',')}}€</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">Frais de livraison gratuit pour votre commande au-delà de {{utils.prixMinFraisLivraisonGratuit | number_format(2,',')}} €</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Prix net (sans TVA)</th>
+                                                    <td id="total-ht">{{((product.cost + fraisLivraison) / (1.0 + utils.tva/100))|number_format(2,',')}} €</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>TVA ({{utils.tva | number_format(0, ',', ' ')}} %)</th>
+                                                    <td id="tva" data-tva="{{utils.tva}}">{{((product.cost + fraisLivraison) * utils.tva / (100 + utils.tva))|number_format(2,',')}} €</td>
                                                 </tr>
                                                 <tr class="order_total">
-                                                    <th>Total</th>
-                                                    <td><strong class="totalCost">{{product.cost|number_format(2,',')}}€</strong></td>
+                                                    <th>Prix total (TVA incluse)</th>
+                                                    <td><strong class="realTotalCost">{{(product.cost + fraisLivraison)|number_format(2,',')}} €</strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -160,9 +171,9 @@
                                     <div class="payment_method">
                                         <div class="order_button">
                                             <button type="submit" class="d-flex justify-content-center align-items-center bg-color_pink_aroma"  id="checkout-btn">
-                                                Commander (<span class="totalCost">{{ product.cost|number_format(2,',')}} €</span>)
+                                                Commander (<span class="realTotalCost">{{ (product.cost + fraisLivraison)|number_format(2,',')}} €</span>)
                                                 <div id="checkout-spinner" class="d-none spinner-border float-right spinner-border-sm ms-2" role="status">
-                                                    <span class="sr-only">Loading...</span>
+                                                    {# <span class="sr-only">Loading...</span> #}
                                                 </div>
                                             </button>
 
@@ -197,6 +208,13 @@
             var totalCostDOM = document.getElementsByClassName("totalCost");
             var productQuantityDOM = document.getElementsByClassName("productQuantity");
             let productQuantityInputDOM = document.getElementById("productQuantity");
+            let realTotalCostDOM = document.getElementsByClassName("realTotalCost");
+            let fraisLivraisonDOM = document.getElementById("frais-livraison");
+            let tvaDOM = document.getElementById("tva");
+            let totalHtDOM = document.getElementById("total-ht");
+            let prixMinGratuit = parseFloat(fraisLivraisonDOM.dataset.prixMinGratuit);
+            let frais = parseFloat(fraisLivraisonDOM.dataset.frais);
+            let tva = parseFloat(tvaDOM.dataset.tva);
 
             let unitPrice = parseFloat(form.dataset.productUnitPrice);
             let quantity = parseFloat(productQuantityInputDOM.value);
@@ -207,8 +225,20 @@
                 return;
             }
 
+            let cost = quantity * unitPrice;
+            let fraisLivraison = cost > 0 && cost < prixMinGratuit ? frais : 0 ;
+            let totalCost = cost + fraisLivraison;
+            let tvaAmount = tva *  totalCost / (100 + tva);
+            let totalHt = totalCost / (1 + tva/100);
+
+            fraisLivraisonDOM.innerHTML = `${formatPrix(fraisLivraison)}`;
+            tvaDOM.innerHTML = `${formatPrix(tvaAmount)}`;
+            totalHtDOM.innerHTML = `${formatPrix(totalHt)}`;
             for(let i=0; i<totalCostDOM.length; i++){
-                totalCostDOM[i].innerHTML = `${formatPrix(quantity * unitPrice)}`;
+                realTotalCostDOM[i].innerHTML = `${formatPrix(totalCost)}`;
+            }
+            for(let i=0; i<totalCostDOM.length; i++){
+                totalCostDOM[i].innerHTML = `${formatPrix(cost)}`;
             }
             for(let i=0; i<productQuantityDOM.length; i++){
                 productQuantityDOM[i].innerHTML = `${quantity}`;
@@ -251,40 +281,12 @@
                 event.preventDefault();
 
                 if(paymentTypeId == 1) {
-                    // One time purchase
-                    stripe.createToken(card).then(oneTimePurchaseProceed);
+                    checkoutProceed();
                 }
-                else if(paymentTypeId == 2){
-                    // Subscription
-                    stripe.createPaymentMethod({
-                            type: 'card',
-                            card: card,
-                        }).then(subscriptionProceed);
-                }
+                
             });
 
-            function subscriptionProceed(result){
-                if (result.error) {
-                    errors.textContent = result.error.message;
-                    form.classList.add('has-error');
-                } else {
-                    let paymentMethodId = result.paymentMethod.id;
-                    document.getElementById('stripe_token').setAttribute('value', paymentMethodId);
-                    console.log(paymentMethodId);
-
-                    checkoutProceed();
-                }
-            }
-            function oneTimePurchaseProceed(result){
-                if (result.error) {
-                    errors.textContent = result.error.message;
-                    form.classList.add('has-error');
-                } else {
-                    document.getElementById('stripe_token').setAttribute('value', result.token.id);
-                    checkoutProceed();
-                }
-            }
-
+            
             function checkoutProceed(){
                 if(onCheckout) return;
                 onCheckout = true;
@@ -322,31 +324,52 @@
                     },
                     success: function (res) {
                         if(res['META'].status == 200){
-                            const data1 = {
-                                mailClient : document.getElementById('mail').value,
-                                nomClient : document.getElementById('lastname').value,
-                                prenomClient : document.getElementById('firstname').value,
-                                nomProduit: data.product_name
-                            }
-                            form.reset();
-                            $.ajax({
-                                url: '/checkout/sending_mail',
-                                method: 'POST',
-                                data : data1,
-                                dataType: "json",
-                                success: function(res) {
-                                    console.log(res)
-                                }
+                            let order_id = res['DATA']["id"];
+                            let stripeIntentSecret = res['DATA']['stripeIntentSecret'];
+                            stripe.handleCardPayment(
+                                stripeIntentSecret,
+                                card
+                            ).then((result) => {
+                                if (result.error) {
+                                    errors.textContent = result.error.message;
+                                    form.classList.add('has-error'); 
+                                }else if('paymentIntent' in result){
+                                    $.ajax({
+                                        url: serverUrl+'/api/checkout/pay',
+                                        method: 'POST',
+                                        contentType: 'application/json; charset=utf-8',
+                                        data : JSON.stringify({"order_id": order_id}),
+                                        dataType: "json",
+                                        success: function(res) {
+                                            if(res['META'].status == 200){
+                                                alert("Votre commande a été effectuée avec succès.");
+                                                form.reset();
+                                            } else{
+                                                alert(res['META'].message);
+                                            }
+                                        },
+                                        error: function(err){
+                                            alert("Le paiement a échoué, veuillez recommencer s'il vous plaît. Si le problème persiste veuillez nous contacter.");
+                                            console.error(err);
+                                        },
+                                        complete: function(){
+                                            checkoutSpinner.classList.add('d-none');
+                                            checkoutBtn.disabled = false;
+                                            onCheckout = false;
+                                        }
 
-                            })
-                            alert("Votre commande a été effectuée avec succès.");
+                                        
+                                    })
+                                }
+                            });     
                         }
                         else{
                             alert(res['META'].message);
+                            checkoutSpinner.classList.add('d-none');
+                            checkoutBtn.disabled = false;
+                            onCheckout = false;
                         }
-                        checkoutSpinner.classList.add('d-none');
-                        checkoutBtn.disabled = false;
-                        onCheckout = false;
+                        
                     },
                     error: function (err){
                         alert("Le paiement a échoué, veuillez recommencer s'il vous plaît. Si le problème persiste veuillez nous contacter.");
