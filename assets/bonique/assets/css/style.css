@@ -146,6 +146,11 @@ figure {
   margin: 0;
 }
 
+p {
+  font-size: 20px !important;
+  line-height: 32px !important;
+}
+
 /*-- 
     - Common Classes
 -----------------------------------------*/
