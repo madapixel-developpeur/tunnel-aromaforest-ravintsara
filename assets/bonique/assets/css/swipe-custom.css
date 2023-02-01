@@ -1,0 +1,31 @@
+/* Medias section starts */
+
+.swiper-paraph {
+    width: 85%;
+    height: 200px;
+}
+
+.section-medias  .swiper-img {
+    width: 85%;
+    height: 200px;
+    border-top : 1px solid #AAA;
+    border-bottom : 1px solid #AAA;
+
+}
+.section-medias .swiper .swiper-button-prev{
+    color: var(--color-green);
+}
+.section-medias .swiper .swiper-button-next{
+    color: var(--color-green);
+}
+.section-medias .swiper .swiper-slide {
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+}
+.section-medias .swiper .swiper-slide-img{
+    height : 75px;
+}
+/* Medias section ends */

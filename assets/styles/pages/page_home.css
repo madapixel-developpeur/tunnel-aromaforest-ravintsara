@@ -103,8 +103,6 @@ section{
 }
 
 
-
-
 /* Container holding the image and the text */
 .lemur-home {
     position: relative;
@@ -209,6 +207,36 @@ section{
     .text-inner-img-lemur-home a.btn-I-order{
         padding: 0 6%;
     }
+
+    h1 {
+        font-size: 2.2em !important;
+        line-height: 1.3em !important;
+    }
+
+    .section-home-banner {
+        height: 63%;
+    }
+
+    .section-home-banner .slider_area,
+    .section-home-banner .owl-stage-outer,
+    .section-home-banner .owl-stage,
+    .section-home-banner .owl-item,
+    .section-home-banner .single_slider
+    {
+        height: 100%
+    }
+
+    .single_slider {
+        background-size: cover !important;
+        background-position: bottom !important;
+    }
+    .single_slider p {
+        font-size: 1.2em !important;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        line-height: 1.5em;
+    }
 }
 
 
@@ -242,7 +270,7 @@ section{
 }
 
 .section-home-7, .section-home-8{
-    padding: 0 12%;
+    /*padding: 0 12%;*/
     margin: 5% 0;
 }
 
@@ -279,5 +307,19 @@ section{
     } 
     .section-home-8 .testimonial-photo{
         padding: 5px 0;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 1.5em !important;
+        line-height: 1.2em !important;
+    }
+    .single_slider p {
+        font-size: 0.9em !important;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        line-height: 1.5em;
     }
 }

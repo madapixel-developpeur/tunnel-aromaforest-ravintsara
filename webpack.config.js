@@ -56,6 +56,7 @@ Encore
     .addStyleEntry('bonique_jquery_ui_css', './assets/bonique/assets/css/jquery-ui.min.css')
     .addStyleEntry('bonique_slinky_menu_css', './assets/bonique/assets/css/slinky.menu.css')
     .addStyleEntry('bonique_plugins_css', './assets/bonique/assets/css/plugins.css')
+    .addStyleEntry('bonique_swiper_custom', './assets/bonique/assets/css/swipe-custom.css')
 
 
     .addStyleEntry('bonique_style_css', './assets/bonique/assets/css/style.css')

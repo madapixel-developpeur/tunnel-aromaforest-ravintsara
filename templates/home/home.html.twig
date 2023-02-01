@@ -9,6 +9,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     {{ encore_entry_link_tags('page_home_css') }}
 {% endblock %}
 
@@ -63,37 +64,47 @@
         <div class="row text-center">
             <h2 class=" my-4">DECOUVREZ NOTRE PRODUIT PHARE : LE RAVINTSARA</h2>
             <p class="mt-4">
-                Le Ravintsara, qui signifie "bonne feuille" en malgache, possède  <br>
+                Le Ravintsara, qui signifie "bonne feuille" en malgache, possède
                 de multiples usages traditionnels.
             </p>
             <p>
-                Son huile essentielle, majeure en aromathérapie est très prisées durant <br> 
+                Son huile essentielle, majeure en aromathérapie est très prisées durant
                 les périodes hivernales
             </p>
-            <picture>
-                <source media="(min-width:650px)" srcset="{{ asset('assets/images/home/img-section-2.png') }}">
-                <img src="{{ asset('assets/images/home/img-section-2.png') }}" alt="img-section-2" width="1138" height="1100" >
-            </picture>  
             <p>
-                Enlevé "Usage Alimentaire" <br>
-                Et voir pour "Diffusion" si on peut trouver une autre illustration qu'un bâtonnet d'encens <br>
-                (plutôt un diffuseur)
-            </p>
-
-            <p>
-                Spécialiste ... respiratoire. Cette huile essentielle est recommandé par tous les thérapeutes <br>
+                Spécialiste ... respiratoire. Cette huile essentielle est recommandé par tous les thérapeutes
                 spécialiste des huiles essentielles ... toux grasses, bronchites
             </p>
+            <p>
+                De nombreuses publications scientifiques montrent en particulier l'éfficacité du 1,8 cinéol
+                pour ses propriétés antivirales incomparables. Le 1,8 cinéol représente de l'ordre de la moitié
+                des molécules présente dans cette huile essentielle 100% naturelle.
+            </p>
+            <picture data-bs-toggle="modal" data-bs-target="#exampleModal" role="button">
+                <source media="(min-width:650px)" srcset="{{ asset('assets/images/home/Groupe 174.png') }}">
+                <img src="{{ asset('assets/images/home/Groupe 174.png') }}" alt="img-section-2" style="cursor:pointer" width="550" height="1100" >
+            </picture>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg ">
+                    <div class="modal-content">
+                        <div class="modal-body text-end">
+                            <button type="button" class="btn-close ms-auto border p-2 border-5 rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="p-5">
+                                <img src="{{ asset('assets/images/home/Groupe 174.png') }}" alt="img-section-2" style="cursor:pointer" width="1100" height="1100" >
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="row d-flex justify-content-center my-3">
                 <div class="w-45">
                     <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma my-4" style="padding: 0 13%;" >Je Participe</a>
                 </div>
             </div>
-            <p>
-                De nombreuses publications scientifiques montrent en particulier l'éfficacité du 1,8 cinéol <br> 
-                pour ses propriétés antivirales incomparables. Le 1,8 cinéol représente de l'ordre de la moitié <br> 
-                des molécules présente dans cette huile essentielle 100% naturelle.
-            </p>
+
         </div>
     </section>
 
@@ -225,42 +236,101 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="brand_container owl-carousel ">
-                            <div class="single_brand">
-                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/France_Ô_logo.png') }}" alt="presse-logo" width="84" height="185"></a>
-                            </div>
-                            <div class="single_brand">
-                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/Layer 3.png') }}" alt="presse-logo" width="194" height="49"></a>
-                            </div>
-                            <div class="single_brand">
-                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/Logo_France_5.svg.png') }}" alt="presse-logo" width="85" height="146"></a>
-                            </div>
-                            <div class="single_brand">
-                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/National_Geographic_logo.png') }}" alt="presse-logo" width="194" height="57"></a>
-                            </div>
-                            <div class="single_brand">
-                                <a href="#"  rel="noindex nofollow"><img src="{{ asset('assets/images/mod_5/TF1_logo_2013.svg.png') }}" alt="presse-logo" width="168" height="61"></a>
-                            </div>
+            </div>
+            <img class="img-style" style="position:absolute; height : 150px; bottom : -150px; right : 50%;" src="{{ asset('assets/images/mod_5/Vector Smart Object2.png') }}" alt="">
+            <div class="section-medias">
+                <div class="swiper swiper-img">
+                    <!-- Additional required wrapper -->
+                    <div class=" swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="single_brand swiper-slide">
+                            <img class="swiper-slide-img" src="{{ asset('assets/images/mod_5/France_Ô_logo.png') }}" alt="Logo_France_5"/>
+                        </div>
+                        <div class="single_brand swiper-slide">
+                            <img class="swiper-slide-img" src="{{ asset('assets/images/mod_5/Layer 3.png') }}" alt="National_Geographic_logo"/>
+                        </div>
+                        <div class="single_brand swiper-slide">
+                            <img class="swiper-slide-img" src="{{ asset('assets/images/mod_5/Logo_France_5.svg.png') }}" alt="France_Ô_logo"/>
+                        </div>
+                        <div class="single_brand swiper-slide">
+                            <img class="swiper-slide-img" src="{{ asset('assets/images/mod_5/National_Geographic_logo.png') }}" alt="arte_logo"/>
+                        </div>
+                        <div class="single_brand swiper-slide">
+                            <img class="swiper-slide-img" src="{{ asset('assets/images/mod_5/TF1_logo_2013.svg.png') }}" alt="arte_logo"/>
                         </div>
                     </div>
+
+                    <!-- If we need navigation buttons -->
+{#                    <div class="swiper-button-prev"></div>#}
+{#                    <div class="swiper-button-next"></div>#}
                 </div>
-                <img class="img-style" style="position:absolute; height : 150px; bottom : -150px; right : 50%;" src="{{ asset('assets/images/mod_5/Vector Smart Object2.png') }}" alt="">
             </div>
+
         </div>
         
         <div class="row text-center">
             <div class="row">
-                <div class="col-1">
-                    <i class="fa-solid fa-chevron-left fa-3x font-pink"></i>
+
+
+                <!-- Slider main container -->
+{#                <div class="swiper swiper-paraph">#}
+{#                    <!-- Additional required wrapper -->#}
+{#                    <div class="swiper-wrapper">#}
+{#                        <!-- Slides -->#}
+{#                        <div class="swiper-slide">#}
+{#                            <p> Je crois à l'utilité du travail d'Olivier. Il offre à ces paysans des nouveaux moyens de substance et çà c'est vital.</p>#}
+{#                            <p class="text-black fw-bold">Yann ARTHUS BERTRAND</p>#}
+{#                        </div>#}
+{#                        <div class="swiper-slide">Slide 2</div>#}
+{#                        <div class="swiper-slide">Slide 3</div>#}
+{#                        ...#}
+{#                    </div>#}
+
+
+{#                    <!-- If we need navigation buttons -->#}
+{#                    <div class="swiper-button-prev"></div>#}
+{#                    <div class="swiper-button-next"></div>#}
+
+{#                </div>#}
+
+                <div class="col-1 d-flex d-md-block">
+                    <i class="fa-solid fa-chevron-left fa-3x font-pink swiper-image-button-prev my-auto"></i>
                 </div>
                 <div class="col-10">
-                    <p> Je crois à l'utilité du travail d'Olivier. Il offre à ces paysans des nouveaux moyens de substance et çà c'est vital.</p>
-                    <p class="text-black fw-bold">Yann ARTHUS BERTRAND</p>
+{#                    <p> Je crois à l'utilité du travail d'Olivier. Il offre à ces paysans des nouveaux moyens de substance et çà c'est vital.</p>#}
+{#                    <p class="text-black fw-bold">Yann ARTHUS BERTRAND</p>#}
+
+                    <div class="swiper swiper-paraph">
+
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <p>
+                                    Vivre dans la forêt sans la couper c'est possible etça peut tout changer.
+                                </p>
+                                <p>
+                                    A Madagascar, Olivier a relevé le défi à grande échelle. Gagner sa vie avec la forêt, est son slogan !
+                                </p>
+                                <p class="text-black fw-bold">Céline COUSTEAU</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p>
+                                    Je crois à l'utilité du travail d'Olivier. Il offre à ces paysans des nouveaux moyens de subsistance et ça c'est vital.
+                                </p>
+                                <p>
+                                    Des arbres vivants valent bien plus que débités en planches.
+                                    A Vohimana on replante, alors qu'ailleurs dans le monde, on coupe sans soucis de l'avenir.
+                                </p>
+                                <p class="text-black fw-bold">Yann Arthus BERTRAND</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
                 </div>
-                <div class="col-1">
-                    <i class="fa-solid fa-chevron-right fa-3x font-pink"></i>
+                <div class="col-1 d-flex d-md-block">
+                    <i class="fa-solid fa-chevron-right fa-3x font-pink swiper-image-button-next my-auto"></i>
                 </div>
             </div>
         </div>
@@ -271,7 +341,7 @@
     <div class="row">
         <div class="col-12 col-md-5">
             <div class="testimonial-photo text-center">
-                <img src="{{ asset('assets/images/home/testimonials/temoin-13.png') }}" alt="img-testimonial1" class="mb-5" width="250" height="274">
+                <img src="{{ asset('assets/images/home/testimonials/Groupe de masques 10.png') }}" alt="img-testimonial1" class="mb-5 rounded-circle" width="250" height="274">
             </div>
         </div>
         <div class="col-12 col-md-7 testimonial-text-block">
@@ -287,4 +357,63 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+
+            $(document).ready(function() {
+                new Swiper('.swiper-img', {
+                    // Optional parameters
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    autoplay: {
+                        delay: 1500,
+                        disableOnInteraction: false,
+                    },
+                    direction: 'horizontal',
+                    loop: true,
+
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    breakpoints: {
+                        // when window width is <= 320px
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetweenSlides: 10
+                        },
+                        // when window width is <= 480px
+                        480: {
+                            slidesPerView: 2,
+                            spaceBetweenSlides: 20
+                        },
+                        // when window width is >= 640px
+                        640: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        }
+                    }
+                });
+
+           new Swiper('.swiper-paraph', {
+                    // Optional parameters
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    autoplay: false,
+                    direction: 'horizontal',
+                    loop: true,
+
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-image-button-next',
+                        prevEl: '.swiper-image-button-prev',
+                    }
+                });
+                document.getElementById("loading_aroma").classList.add('hide');
+            })
+
+
+    </script>
 {% endblock %}
