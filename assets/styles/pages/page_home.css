@@ -9,8 +9,12 @@ h2{
     font-weight: 700;
     display: inline-block;
     font-size: 30px;
-    line-height: 30px;
+    line-height: 38px;
     color: var(--color-green-aroma);
+}
+
+p{
+    font-size: 18px !important;
 }
 
 @media (max-width: 400px) {
@@ -258,6 +262,19 @@ section{
 .section-home-5 p{
     line-height: 1.4em;
 }
+.section-home-5 .step-aroma p{
+    font-size: 14px !important;
+    line-height: 1.6em !important;
+}
+.section-home-5 .icon-step{
+    min-height: 33%;
+}
+@media (max-width : 860px) {
+    .section-home-5 .icon-step{
+        min-height: 20%;
+    }
+}
+
 
 .section-home-6 p.aromaforest-under-who-are{
     font-size: x-large;
