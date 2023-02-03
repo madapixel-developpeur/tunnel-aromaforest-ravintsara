@@ -112,9 +112,9 @@ figure{
     max-width: 1440px;
 }
 @media #{$large-mobile}{
-    .container {
-        max-width: 464px;
-    }
+    // .container {
+    //     max-width: 464px;
+    // }
 }
 @media #{$small-mobile}{
     .container {

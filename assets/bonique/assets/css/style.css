@@ -171,9 +171,9 @@ p {
 }
 
 @media only screen and (max-width: 767px) {
-  .container {
+  /* .container {
     max-width: 464px;
-  }
+  } */
 }
 @media only screen and (max-width: 479px) {
   .container {
