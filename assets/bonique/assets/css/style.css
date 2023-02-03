@@ -270,7 +270,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     Scroll Up 
 -----------------------------------------*/
 #scrollUp {
-  background: #d52121 none repeat scroll 0 0;
+  background: var(--color-pink-aroma) none repeat scroll 0 0;
   bottom: 85px;
   color: #ffffff;
   cursor: pointer;
