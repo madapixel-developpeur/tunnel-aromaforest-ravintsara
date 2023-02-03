@@ -161,14 +161,17 @@
 
 <section class="lemur-home section-home-4">
     <!-- <img src="{{ asset('assets/images/home/lemur-home.png') }}" alt="lemur-home"  sizes="100vw"  > -->
-    <picture>
-        <source media="(min-width:650px)" srcset="{{ asset('assets/images/home/lemur-home.png') }}">
-        <img src="{{ asset('assets/images/home/lemur-home.png') }}" alt="img-lemur-sec-4" width="1920" height="778">
-    </picture>  
-    <div class="text-inner-img-lemur-home ">
-        <p id="title-amount"> RECEVEZ VOTRE FLACON ET PARRAINER UN ARBRE POUR </p>
-        <p id="amount">9,80 €</p>
-        <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
+    <div class="img-banner-s-h-4">
+        <picture>
+            <source media="(min-width:750px)" srcset="{{ asset('assets/images/home/lemur-home.png') }}">
+            <source media="(max-width:749px)" srcset="{{ asset('assets/images/home/lemur-home-mobile.png') }}">
+            <img src="{{ asset('assets/images/home/lemur-home.png') }}" alt="img-lemur-sec-4" width="2834" height="778">
+        </picture>  
+        <div class="text-inner-img-lemur-home text-center ">
+            <p id="title-amount"> RECEVEZ VOTRE FLACON ET PARRAINER UN ARBRE POUR </p>
+            <p id="amount">9,80 €</p>
+            <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
+        </div>
     </div>
 </section>
 <div class="container">

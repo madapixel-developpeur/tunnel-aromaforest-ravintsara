@@ -117,10 +117,9 @@ section{
 /* Top left text */
 .text-inner-img-lemur-home {
     position: absolute;
-    top: 51px;
-    left: 125px;
-    right: 150px;
-    text-align: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .text-inner-img-lemur-home p{
@@ -128,84 +127,74 @@ section{
 }
 .text-inner-img-lemur-home #title-amount {
     letter-spacing: 0.2rem;
-    line-height: 1.2;
-    font-size: 30px;
-    margin-bottom: 58px;
+    line-height: 1.4 !important;
+    font-size: 22px !important;
 }
 
 .text-inner-img-lemur-home #amount {
-    font-size: 70px;
+    font-size: 70px !important;
     font-weight: 600;
-    margin-bottom: 58px;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 .text-inner-img-lemur-home a.btn-I-order{
     padding: 0 13%;
  }
 
 
-@media (min-width: 1300px) {
-    .text-inner-img-lemur-home #title-amount {
-        font-size: 71px;
-        margin-bottom: 80px;
-    }
-    .text-inner-img-lemur-home #amount {
-        font-size: 139px;
-        margin-bottom: 80px;
-    }
-}
+
 @media (min-width: 1000px) {
-    .text-inner-img-lemur-home {
+    /* .text-inner-img-lemur-home {
         top: 83px;
-    }
+    } */
     .text-inner-img-lemur-home #title-amount {
-        font-size: 40px;
-        margin-bottom: 63px;
+        font-size: 30px !important;
     }
     .text-inner-img-lemur-home #amount {
         font-size: 80px;
         margin-bottom: 63px;
+        margin-top: 63px;
     }
 }
+@media (min-width: 1300px) {
+    .text-inner-img-lemur-home #title-amount {
+        font-size: 56px !important;
+    }
+    .text-inner-img-lemur-home #amount {
+        font-size: 139px;
+        margin-bottom: 60px;
+        margin-top: 60px;
+    }
+}
+
 
 @media (max-width: 800px) {
     .text-inner-img-lemur-home #title-amount {
         margin-bottom: 32px;
     }
     .text-inner-img-lemur-home #amount {
-        margin-bottom: 32px;
-        font-size: 40px;
+        margin-bottom: 42px;
+        margin-top: 42px;
+        font-size: 40px !important;
     }
 
 }
 @media (max-width: 750px) {
-    .text-inner-img-lemur-home {
-        top: 36px;
-        left: 64px;
-        right: 64px;
-    }
-
     .text-inner-img-lemur-home #title-amount {
-        font-size: 25px;
+        font-size: 25px !important;
         margin-bottom: 10px;
     }
 }
+
 @media (max-width: 580px) {
     .text-inner-img-lemur-home .button{
         font-size: .875rem;
     }
-    .text-inner-img-lemur-home {
-        top: 17px;
-        left: 30px;
-        right: 30px;
-    }
-
     .text-inner-img-lemur-home #title-amount {
-        font-size: 13px;
-        margin-bottom: 10px;
+        font-size: 25px !important;
     }
     .text-inner-img-lemur-home #amount {
         font-size: 25px;
-        margin-bottom: 10px;
     }
 
     .text-inner-img-lemur-home a.btn-I-order{
@@ -240,6 +229,15 @@ section{
         margin-right: auto;
         width: 80%;
         line-height: 1.5em;
+    }
+}
+@media (max-width: 344px) {
+    .text-inner-img-lemur-home #title-amount {
+        font-size: 17px !important;
+    }
+    .text-inner-img-lemur-home #amount {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
 
