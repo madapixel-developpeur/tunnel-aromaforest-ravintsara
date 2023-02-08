@@ -1,6 +1,10 @@
 <div class="footer-aromaforest">
     <div class="footer-logo-container">
-        <img class="footer-logo" src="{{ asset('assets/images/af_logo_white.png') }}" width="200" height="93" alt="Logo Aroma forest">
+        <picture>
+            <source media="(min-width:750px)" srcset="{{ asset('assets/images/af-logo-white.webp') }}">
+            <source media="(max-width:749px)" srcset="{{ asset('assets/images/af-logo-white.webp') }}">
+            <img class="footer-logo" src="{{ asset('assets/images/af-logo-white.webp') }}" width="200" height="93" alt="Logo Aroma forest">
+        </picture>
     </div>
     <div class="footer-body">
         <ul class="footer-actions ">
