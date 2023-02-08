@@ -16,7 +16,7 @@
 {% block body %}
 <section class="slider_section slider_s_three section-home-banner">
     <div class="slider_area owl-carousel">
-        <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('assets/images/home/banner-home-2.png') }}">
+        <div class="single_slider d-flex align-items-center" data-bgimg="{{ asset('assets/images/home/banner-home-2.webp') }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -38,7 +38,11 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="block-col-under-banner">
-                    <img src="{{ asset('assets/images/aro_1_flacon_1_arbre_2.png') }}"  width="350" height="206" class="mb-4" alt="1-flacon-arbre">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ asset('assets/images/aro-1-flacon-1-arbre-2.webp') }}">
+                        <source media="(max-width:749px)" srcset="{{ asset('assets/images/aro-1-flacon-1-arbre-2.webp') }}">
+                        <img src="{{ asset('assets/images/aro-1-flacon-1-arbre-2.webp') }}"  width="350" height="206" class="mb-4" alt="1-flacon-arbre">
+                    </picture>  
                     <h2 class="mt-4">DEVENEZ UN ACTEUR DU REBOISEMENT</h2>
                     <p class="mt-1">
                         Devenez... et de la préservation ...En effet, depuis plus de 20 ans, nous protégeons des forêts primaires en travaillant
@@ -50,7 +54,11 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="block-col-under-banner">
-                    <img src="{{ asset('assets/images/WFEN-logo-final.jpg') }}"  width="400" height="213" alt="img-wildlife">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ asset('assets/images/WFEN-logo-final.webp') }}">
+                        <source media="(max-width:749px)" srcset="{{ asset('assets/images/WFEN-logo-final.webp') }}">
+                        <img src="{{ asset('assets/images/WFEN-logo-final.webp') }}"  width="400" height="213" alt="img-wildlife">
+                    </picture>  
                     <p class="py-4 mb-0">Un modèle unique, certifié qui soutien la conservation des lémurien.</p>
                     <a href="{{ path('app_checkout_index') }}" class="btn btn-outline-pink-aroma color_pink_aroma">En savoir plus</a>
                     <p class="font-green mt-4">PARRAINEZ UN ARBRE ET RECEVEZ VOTRE FLACON POUR</p>
@@ -81,8 +89,8 @@
                 des molécules présente dans cette huile essentielle 100% naturelle.
             </p>
             <picture data-bs-toggle="modal" data-bs-target="#exampleModal" role="button">
-                <source media="(min-width:650px)" srcset="{{ asset('assets/images/home/Groupe 174.png') }}">
-                <img src="{{ asset('assets/images/home/Groupe 174.png') }}" alt="img-section-2" style="cursor:pointer" width="550" height="1100" >
+                <source media="(min-width:650px)" srcset="{{ asset('assets/images/home/groupe-174.webp') }}">
+                <img src="{{ asset('assets/images/home/groupe-174.webp') }}" alt="img-section-2" style="cursor:pointer" width="550" height="1100" >
             </picture>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg ">
@@ -90,7 +98,7 @@
                         <div class="modal-body text-end">
                             <button type="button" class="btn-close ms-auto border p-2 border-5 rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
                             <div class="p-5">
-                                <img src="{{ asset('assets/images/home/Groupe 174.png') }}" alt="img-section-2" style="cursor:pointer" width="1100" height="1100" >
+                                <img src="{{ asset('assets/images/home/groupe-174.webp') }}" alt="img-section-2" style="cursor:pointer" width="1100" height="1100" >
 
                             </div>
                         </div>
@@ -126,7 +134,11 @@
                 <div class="block-col-section-3 sec-3-grande-ligne">
                     <div class="row my-4">
                         <div class="col-2">
-                            <img src="{{ asset('assets/images/Icone/424@4x.png') }}" alt="icon" width="87" height="94">
+                            <picture>
+                                <source media="(min-width:750px)" srcset="{{ asset('assets/images/Icone/424@4x.webp') }}">
+                                <source media="(max-width:749px)" srcset="{{ asset('assets/images/Icone/424@4x.webp') }}">
+                                <img src="{{ asset('assets/images/Icone/424@4x.webp') }}" alt="icon" width="87" height="94">
+                            </picture>  
                         </div>
                         <div class="col-10 ps-1 ps-md-5">
                             <h3 class="text-uppercase font-pink p-title-bold-700 h3-in-grande-ligne">Propriétés</h3>
@@ -135,7 +147,11 @@
                     </div>
                     <div class="row my-4">
                         <div class="col-2">
-                            <img src="{{ asset('assets/images/Icone/45@4x.png') }}" alt="icon" width="87" height="94">
+                            <picture>
+                                <source media="(min-width:750px)" srcset="{{ asset('assets/images/Icone/45@4x.webp') }}">
+                                <source media="(max-width:749px)" srcset="{{ asset('assets/images/Icone/45@4x.webp') }}">
+                                <img src="{{ asset('assets/images/Icone/45@4x.webp') }}" alt="icon" width="87" height="94">
+                            </picture>  
                         </div>
                         <div class="col-10 ps-1 ps-md-5">
                             <h3 class="text-uppercase font-pink p-title-bold-700 h3-in-grande-ligne">Utilisations</h3>
@@ -144,7 +160,11 @@
                     </div>
                     <div class="row my-4">
                         <div class="col-2">
-                            <img src="{{ asset('assets/images/Icone/Fir 1@4x.png') }}" alt="icon" width="87" height="94">
+                            <picture>
+                                <source media="(min-width:750px)" srcset="{{ asset('assets/images/Icone/Fir 1@4x.webp') }}">
+                                <source media="(max-width:749px)" srcset="{{ asset('assets/images/Icone/Fir 1@4x.webp') }}">
+                                <img src="{{ asset('assets/images/Icone/Fir 1@4x.webp') }}" alt="icon" width="87" height="94">
+                            </picture>  
                         </div>
                         <div class="col-10 ps-1 ps-md-5">
                             <h3 class="text-uppercase font-pink p-title-bold-700 h3-in-grande-ligne">Recommandation d'usages</h3>
@@ -160,12 +180,11 @@
 </div>
 
 <section class="lemur-home section-home-4">
-    <!-- <img src="{{ asset('assets/images/home/lemur-home.png') }}" alt="lemur-home"  sizes="100vw"  > -->
     <div class="img-banner-s-h-4">
         <picture>
-            <source media="(min-width:750px)" srcset="{{ asset('assets/images/home/lemur-home.png') }}">
-            <source media="(max-width:749px)" srcset="{{ asset('assets/images/home/lemur-home-mobile.png') }}">
-            <img src="{{ asset('assets/images/home/lemur-home.png') }}" alt="img-lemur-sec-4" width="2834" height="778">
+            <source media="(min-width:750px)" srcset="{{ asset('assets/images/home/lemur-home.webp') }}">
+            <source media="(max-width:749px)" srcset="{{ asset('assets/images/home/lemur-home-mobile.webp') }}">
+            <img src="{{ asset('assets/images/home/lemur-home.webp') }}" alt="img-lemur-sec-4" width="2834" height="778">
         </picture>  
         <div class="text-inner-img-lemur-home text-center ">
             <p id="title-amount"> RECEVEZ VOTRE FLACON ET PARRAINER UN ARBRE POUR </p>
@@ -187,28 +206,44 @@
             </div>
             <div class="col-12 col-md-2 text-center mt-3 mb-4 step-aroma">
                 <div class="icon-step">
-                    <img src="{{ asset('assets/images/Icone/Fichier_3@4x.png') }}" alt="icon" width="80" height="80">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ asset('assets/images/Icone/Fichier_3@4x.webp') }}">
+                        <source media="(max-width:749px)" srcset="{{ asset('assets/images/Icone/Fichier_3@4x.webp') }}">
+                        <img src="{{ asset('assets/images/Icone/Fichier_3@4x.webp') }}" alt="icon" width="80" height="80">
+                    </picture>  
                 </div>
                 <h3 class="text-uppercase font-pink fw-bold my-3">étape 1</h3>
                 <p class="text-uppercase">J'accède au flacon</p>
             </div>
             <div class="col-12 col-md-2 text-center mt-3 mb-4 step-aroma">
                 <div class="icon-step">
-                    <img src="{{ asset('assets/images/Icone/hk@4x.png') }}" alt="icon" width="80" height="80">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ asset('assets/images/Icone/hk@4x.webp') }}">
+                        <source media="(max-width:749px)" srcset="{{ asset('assets/images/Icone/hk@4x.webp') }}">
+                        <img src="{{ asset('assets/images/Icone/hk@4x.webp') }}" alt="icon" width="80" height="80">
+                    </picture>  
                 </div>
                 <h3 class="text-uppercase font-pink fw-bold my-3">étape 2</h3>
                 <p class="text-uppercase">Je deviens parrain</p>
             </div>
             <div class="col-12 col-md-2 text-center mt-3 mb-4 step-aroma">
                 <div class="icon-step">
-                    <img src="{{ asset('assets/images/Icone/Fichier_1@4x.png') }}" alt="icon" width="80" height="80">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ asset('assets/images/Icone/Fichier_1@4x.webp') }}">
+                        <source media="(max-width:749px)" srcset="{{ asset('assets/images/Icone/Fichier_1@4x.webp') }}">
+                        <img src="{{ asset('assets/images/Icone/Fichier_1@4x.webp') }}" alt="icon" width="80" height="80">
+                    </picture>  
                 </div>
                 <h3 class="text-uppercase font-pink fw-bold my-3">étape 3</h3>
                 <p class="text-uppercase">Je decide de planter un ravintsara</p>
             </div>
             <div class="col-12 col-md-2 text-center mt-3 mb-4 step-aroma">
                 <div class="icon-step">
-                    <img src="{{ asset('assets/images/Icone/Fichier__1@4x.png') }}" alt="icon" width="80" height="80">
+                    <picture>
+                        <source media="(min-width:750px)" srcset="{{ asset('assets/images/Icone/Fichier__1@4x.webp') }}">
+                        <source media="(max-width:749px)" srcset="{{ asset('assets/images/Icone/Fichier__1@4x.webp') }}">
+                        <img src="{{ asset('assets/images/Icone/Fichier__1@4x.webp') }}" alt="icon" width="80" height="80">
+                    </picture>
                 </div>
                 <h3 class="text-uppercase font-pink fw-bold my-3">étape 4</h3>
                 <p class="text-uppercase">Je decouvre la localisation de mon arbre depuis mon espace</p>
@@ -233,7 +268,11 @@
                 </p>
             </div>
             <div class="col-12 col-md-6 text-center">
-                <img src="{{ asset('assets/images/home/image_3_ses_ppte_mod_1.png') }}" alt="three-flacon" width="450" height="333">
+                <picture>
+                    <source media="(min-width:750px)" srcset="{{ asset('assets/images/home/image_3_ses_ppte_mod_1.webp') }}">
+                    <source media="(max-width:749px)" srcset="{{ asset('assets/images/home/image_3_ses_ppte_mod_1.webp') }}">
+                    <img src="{{ asset('assets/images/home/image_3_ses_ppte_mod_1.webp') }}" alt="three-flacon" width="450" height="333">
+                </picture> 
             </div>
         </div>
     </section>
@@ -352,7 +391,11 @@
     <div class="row">
         <div class="col-12 col-md-5">
             <div class="testimonial-photo text-center">
-                <img src="{{ asset('assets/images/home/testimonials/Groupe de masques 10.png') }}" alt="img-testimonial1" class="mb-5 rounded-circle" width="250" height="274">
+                <picture>
+                    <source media="(min-width:750px)" srcset="{{ asset('assets/images/home/testimonials/groupe-de-masques-10.webp') }}">
+                    <source media="(max-width:749px)" srcset="{{ asset('assets/images/home/testimonials/groupe-de-masques-10.webp') }}">
+                    <img src="{{ asset('assets/images/home/testimonials/groupe-de-masques-10.webp') }}" alt="img-testimonial1" class="mb-5 rounded-circle" width="250" height="274">
+                </picture> 
             </div>
         </div>
         <div class="col-12 col-md-7 testimonial-text-block px-4">
