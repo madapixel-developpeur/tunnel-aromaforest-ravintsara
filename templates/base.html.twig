@@ -12,7 +12,7 @@
         {% block metas %}{% endblock %}
 
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.png') }}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" media="none" onload="if(media!=='all')media='all'" />
         <!-- Document Title 
         ======================================-->
         <title>{% block title %}Aromaforest : Ravintsara{% endblock %}</title>
@@ -48,7 +48,7 @@
             {{ encore_entry_script_tags('bonique_carousel_js') }}
 
             <!-- To fix "jQuery is not defined" in plugin.js  -->
-            <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" async></script>
             <script src="{{ asset('assets/bonique/assets/js/plugins.js') }}"></script>
 
 
