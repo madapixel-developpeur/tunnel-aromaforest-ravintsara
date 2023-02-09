@@ -34,7 +34,7 @@ Encore
     .addEntry('bonique_jquery_manific_popup_js', './assets/bonique/assets/js/jquery.magnific-popup.min.js')
     .addEntry('bonique_jquery_counterup_js', './assets/bonique/assets/js/jquery.counterup.min.js')
     .addEntry('bonique_jquery_countdown_js', './assets/bonique/assets/js/jquery.countdown.js')
-    .addEntry('bonique_jqurery_ui_js', './assets/bonique/assets/js/jquery.ui.js')
+    .addEntry('bonique_jqurery_ui_js', './assets/bonique/assets/js/jquery.ui_v1_13_1.js')
     .addEntry('bonique_jquery_elevatezoom_js', './assets/bonique/assets/js/jquery.elevatezoom.js')
     .addEntry('bonique_isotope_pkgd_js', './assets/bonique/assets/js/isotope.pkgd.min.js')
     .addEntry('bonique_slinky_menu_js', './assets/bonique/assets/js/slinky.menu.js')
