@@ -90,7 +90,7 @@ section{
 }
 
 
-.section-home-3 ul li::before{
+ul li::before{
     content: "\2022";
     color: var(--color-pink-aroma);;
     font-weight: bold;
@@ -99,10 +99,10 @@ section{
     margin-left: -1em;
     font-size: 23px;
 }
-.section-home-3 ul li{
+ul li{
     margin-left: 50px;
 }
-.section-home-3 ul li{
+ul li{
     list-style: none;
 }
 
