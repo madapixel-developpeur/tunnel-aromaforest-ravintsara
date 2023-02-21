@@ -14,7 +14,7 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(Request $request): Response
     {
-        return $this->render('home/home.html.twig', []);
+        return $this->render('home/home.html.twig', ['flacon_price' => $_ENV['FLACON_PRICE']]);
     }
 
     #[Route('/legal_notice', name: 'app_legal_notice')]

@@ -67,7 +67,7 @@
                     <p class="py-4 mb-0">Un modèle unique et certifié, qui soutient la conservation des lémuriens.</p>
                     <a href="{{ path('app_checkout_index') }}" class="btn btn-outline-pink-aroma color_pink_aroma">En savoir plus</a>
                     <p class="font-green mt-4">PARRAINEZ UN ARBRE ET RECEVEZ VOTRE FLACON POUR</p>
-                    <p class="amount-fw-bold">9.99 €</p>
+                    <p class="amount-fw-bold mt-4">{{flacon_price}} €</p>
                 </div>
             </div>
         </div>
@@ -190,7 +190,7 @@
         </picture>  
         <div class="text-inner-img-lemur-home text-center ">
             <p id="title-amount"> RECEVEZ VOTRE FLACON ET PARRAINEZ UN ARBRE POUR </p>
-            <p id="amount">9,80 €</p>
+            <p id="amount">{{flacon_price}} €</p>
             <a href="{{ path('app_checkout_index') }}" class="button bg-color_pink_aroma text-center btn-I-order"> Je Commande</a>
         </div>
     </div>
