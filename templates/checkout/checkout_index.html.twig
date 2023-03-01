@@ -147,20 +147,22 @@
                                                     <td class="totalCost">{{product.cost|number_format(2,',')}}€</td>
                                                 </tr>
                                                 <tr>
+                                                    <th>TVA ({{utils.tva | number_format(0, ',', ' ')}} %)</th>
+                                                    <td id="tva" data-tva="{{utils.tva}}">{{((product.cost) * utils.tva / (100 + utils.tva))|number_format(2,',')}} €</td>
+                                                </tr>
+                                                 <tr>
+                                                    <th>Prix net (sans TVA)</th>
+                                                    <td id="total-ht">{{((product.cost) / (1.0 + utils.tva/100))|number_format(2,',')}} €</td>
+                                                </tr>
+                                                <tr>
                                                     <th>Frais de livraison</th>
                                                     <td id="frais-livraison" data-frais="{{utils.fraisLivraison}}" data-prix-min-gratuit="{{utils.prixMinFraisLivraisonGratuit}}">{{fraisLivraison|number_format(2,',')}}€</td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">Frais de livraison gratuit pour votre commande au-delà de {{utils.prixMinFraisLivraisonGratuit | number_format(2,',')}} €</td>
                                                 </tr>
-                                                <tr>
-                                                    <th>Prix net (sans TVA)</th>
-                                                    <td id="total-ht">{{((product.cost + fraisLivraison) / (1.0 + utils.tva/100))|number_format(2,',')}} €</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>TVA ({{utils.tva | number_format(0, ',', ' ')}} %)</th>
-                                                    <td id="tva" data-tva="{{utils.tva}}">{{((product.cost + fraisLivraison) * utils.tva / (100 + utils.tva))|number_format(2,',')}} €</td>
-                                                </tr>
+                                               
+                                                
                                                 <tr class="order_total">
                                                     <th>Prix total (TVA incluse)</th>
                                                     <td><strong class="realTotalCost">{{(product.cost + fraisLivraison)|number_format(2,',')}} €</strong></td>
@@ -228,8 +230,8 @@
             let cost = quantity * unitPrice;
             let fraisLivraison = cost > 0 && cost < prixMinGratuit ? frais : 0 ;
             let totalCost = cost + fraisLivraison;
-            let tvaAmount = tva *  totalCost / (100 + tva);
-            let totalHt = totalCost / (1 + tva/100);
+            let tvaAmount = tva *  cost / (100 + tva);
+            let totalHt = cost / (1 + tva/100);
 
             fraisLivraisonDOM.innerHTML = `${formatPrix(fraisLivraison)}`;
             tvaDOM.innerHTML = `${formatPrix(tvaAmount)}`;
