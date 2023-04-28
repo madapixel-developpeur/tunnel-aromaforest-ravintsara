@@ -65,21 +65,31 @@
                                         <input type="text" name="mail" id="mail" required/>
 
                                     </div>
-                                    <div class="col-lg-6 mb-20">
+                                    <div class="col-lg-12 mb-20">
                                         <label>Adresse de livraison</label>
-                                        <input type="text" name="delivery_address"/>
-                                    </div>
-                                    <div class="col-lg-6 mb-20">
-                                        <label>Adresse de facturation</label>
-                                        <input type="text" name="billing_address"/>
+                                        <input type="text" name="delivery_address" id="delivery_address"/>
                                     </div>
                                     <div class="col-lg-6 mb-20">
                                         <label>Code postal</label>
-                                        <input type="text" name="postal_code"/>
+                                        <input type="text" name="postal_code" id="postal_code" />
                                     </div>
                                     <div class="col-6 mb-20">
                                         <label for="country">Ville</label>
-                                        <input type="text" name="city"/>
+                                        <input type="text" name="city" id="city"/>
+                                    </div>
+                                    <div class="col-lg-12 mb-20">
+                                        <label>Adresse de facturation</label><br/>
+                                        <input type="checkbox" id="check_same_address" name="check_same_address">
+                                        <label for="check_same_address">L’adresse de facturation est la même que l’adresse de livraison</label><br/>
+                                        <input type="text" name="billing_address" value="" id="billing_address" />
+                                    </div>
+                                    <div class="col-lg-6 mb-20">
+                                        <label>Code postal</label>
+                                        <input type="text" name="billing_postal_code" value="" id="billing_postal_code" />
+                                    </div>
+                                    <div class="col-6 mb-20">
+                                        <label for="country">Ville</label>
+                                        <input type="text" name="billing_city" value="" id="billing_city" />
                                     </div>
                                     <div class="col-12 mb-20">
                                         <label for="country">Quantité</label>
@@ -384,6 +394,29 @@
             }
 
             //pageLoaded();
+
+            $( document ).ready(function() {
+                _delivery_address = $('#delivery_address');
+                _postal_code = $('#postal_code');
+                _city = $('#city');
+
+
+                _billing_address = $('#billing_address');
+                _billing_postal_code = $('#billing_postal_code');
+                _billing_city = $('#billing_city');
+
+                $("input[id='check_same_address']").on('change', function() {
+                    if(this.checked) {
+                        _billing_address.val(_delivery_address.val())
+                        _billing_postal_code.val(_postal_code.val())
+                        _billing_city.val(_city.val())
+                    }else{
+                        _billing_address.val(null)
+                        _billing_postal_code.val(null)
+                        _billing_city.val(null)
+                    }
+                });
+            });
         });
 
         

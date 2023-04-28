@@ -86,23 +86,6 @@ section{
 }
 
 
-ul li::before{
-    content: "\2022";
-    color: var(--color-pink-aroma);;
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
-    font-size: 23px;
-}
-ul li{
-    margin-left: 50px;
-}
-ul li{
-    list-style: none;
-}
-
-
 /* Container holding the image and the text */
 .lemur-home {
     position: relative;
